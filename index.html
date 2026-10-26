@@ -1,375 +1,120 @@
 <!doctype html>
 <html lang="en">
 <head>
+<script>(function(){var d=document.documentElement,m=matchMedia,q=location.search,n=navigator,c=n.connection||{},ua=n.userAgent||"";
+var lite=/[?&]lite/.test(q)||(!/[?&]full/.test(q)&&(m("(max-width:820px)").matches||m("(hover:none)").matches||(n.deviceMemory&&n.deviceMemory<=2)||c.saveData));
+d.className+=(lite?" lite":" full")+(/Android/i.test(ua)?" android":(/iPhone|iPad|iPod/i.test(ua)||(n.platform==="MacIntel"&&n.maxTouchPoints>1))?" ios":"");})();</script>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#0b0b0d">
-<meta name="description" content="Portfolio of Charl Marais, electrical engineering student at the University of Pretoria.">
-<script>(function(){var d=document.documentElement,m=matchMedia,q=location.search,n=navigator,c=n.connection||{},ua=n.userAgent||'';
-var lite=/[?&]lite/.test(q)||(!/[?&]full/.test(q)&&(m('(max-width:820px)').matches||m('(hover:none)').matches||(n.deviceMemory&&n.deviceMemory<=2)||c.saveData));
-d.className+=(lite?' lite':' full')+(/Android/i.test(ua)?' android':(/iPhone|iPad|iPod/i.test(ua)||(n.platform==='MacIntel'&&n.maxTouchPoints>1))?' ios':'');})();</script>
 <title>Charl Marais Portfolio</title>
+<meta name="description" content="Portfolio of Charl Marais, electrical engineering student at the University of Pretoria: PCB design, analogue electronics, embedded firmware and control systems.">
+<meta name="theme-color" content="#0d0e10">
 <meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
-<style>
-/* Layout: one long dark page with frosted-glass panels over drifting red light; two light bands (education, karate) break the rhythm. */
-:root{
-  --ink:#0d0e10; --ink-2:#15161a; --ink-3:#1e2025;
-  --paper:#ecebe9; --paper-2:#dddbd8;
-  --red:#e0343c; --red-deep:#9c1d26;
-  --fg:#ecebe9; --fg-dim:#a3a3a8; --fg-ink:#16171a; --fg-ink-dim:#5b5c61;
-  --line:rgba(236,235,233,.12); --line-ink:rgba(22,23,26,.14);
-  --glass:rgba(236,235,233,.06); --glass-ink:rgba(255,255,255,.55);
-  --display:'Bricolage Grotesque','Helvetica Neue',Arial,sans-serif;
-  --body:'Instrument Sans','Helvetica Neue',Arial,sans-serif;
-  --mono:'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace;
-  color-scheme:dark;
-}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{background:var(--ink);color:var(--fg);font:400 16px/1.6 var(--body);padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));overflow-x:hidden;margin:0}
-a{color:inherit}
-:focus-visible{outline:2px solid var(--red);outline-offset:3px;border-radius:4px}
-.wrap{max-width:1080px;margin:0 auto;position:relative;z-index:1}
-section{padding-block:clamp(56px,9vw,104px)}
-.band-light{background:var(--paper);color:var(--fg-ink);margin-inline:calc(50% - 50vw);padding-inline:calc(50vw - 50%);position:relative}
-.band-light .wrap{max-width:1080px}
-.eyebrow{font:500 12px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--red);margin:0 0 18px}
-h1,h2,h3{font-family:var(--display);text-wrap:balance;margin:0;line-height:1.02;letter-spacing:-.02em}
-h2{font-size:clamp(32px,5vw,52px);font-weight:700;margin-bottom:28px}
-h3{font-size:22px;font-weight:700;line-height:1.2;letter-spacing:-.01em}
-p{margin:0 0 1em;max-width:65ch}
-.dim{color:var(--fg-dim)} .band-light .dim{color:var(--fg-ink-dim)}
-.mono{font-family:var(--mono)}
-/* ambient light */
-.orbs{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden}
-.orb{position:absolute;border-radius:50%;filter:blur(90px);opacity:.5;will-change:transform}
-.o1{width:46vw;height:46vw;background:var(--red-deep);top:-12vw;right:-10vw;animation:drift1 26s ease-in-out infinite alternate}
-.o2{width:34vw;height:34vw;background:#3a3b42;bottom:-10vw;left:-8vw;animation:drift2 32s ease-in-out infinite alternate}
-.o3{width:22vw;height:22vw;background:var(--red);opacity:.22;top:48vh;left:42vw;animation:drift3 38s ease-in-out infinite alternate}
-@keyframes drift1{to{transform:translate(-8vw,10vh) scale(1.15)}}
-@keyframes drift2{to{transform:translate(10vw,-8vh) scale(1.1)}}
-@keyframes drift3{to{transform:translate(-12vw,-14vh) scale(.8)}}
-/* nav */
-nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;margin-inline:calc(50% - 50vw);padding:14px calc(50vw - 50%);backdrop-filter:blur(18px) saturate(1.2);-webkit-backdrop-filter:blur(18px) saturate(1.2);background:rgba(13,14,16,.55);border-bottom:1px solid var(--line)}
-body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:30;background:var(--ink)}
-.nav-in{max-width:1080px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;gap:16px}
-.logo{font:700 18px var(--display);text-decoration:none;letter-spacing:-.01em}
-.logo b{color:var(--red)}
-.links{display:flex;gap:4px 20px;flex-wrap:wrap;font:500 12px var(--mono);letter-spacing:.08em;text-transform:uppercase}
-.links a{text-decoration:none;color:var(--fg-dim);padding:6px 0;transition:color .2s}
-.links a:hover{color:var(--fg)}
-/* hero */
-.hero{padding-block:clamp(64px,11vw,140px) clamp(48px,7vw,88px)}
-.hero h1{font-size:clamp(46px,9.5vw,116px);font-weight:800;line-height:.94;letter-spacing:-.035em}
-.hero h1 span{display:block;overflow:hidden}
-.hero h1 span i{display:block;font-style:normal;animation:rise .9s cubic-bezier(.2,.8,.2,1) both}
-.hero h1 span:nth-child(2) i{animation-delay:.12s;color:var(--red)}
-@keyframes rise{from{transform:translateY(105%)}to{transform:none}}
-.role{font:500 13px/1.5 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--fg-dim);margin:28px 0 22px;animation:fade 1s .4s both}
-@keyframes fade{from{opacity:.0}to{opacity:1}}
-.lede{font-size:clamp(18px,2.2vw,22px);line-height:1.5;max-width:52ch;color:#d3d2d0;animation:fade 1s .55s both}
-.cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:32px;animation:fade 1s .7s both}
-.btn{display:inline-flex;align-items:center;gap:8px;padding:13px 22px;border-radius:999px;font:600 14px var(--body);text-decoration:none;border:1px solid var(--line);background:var(--glass);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);cursor:pointer;color:var(--fg);transition:transform .2s,background .2s,border-color .2s}
-.btn:hover{transform:translateY(-2px);border-color:rgba(224,52,60,.6)}
-.btn.primary{background:var(--red);border-color:var(--red);color:#fff}
-.btn.primary:hover{background:#ee4a52}
-.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin-top:56px}
-.stat{padding:18px 20px;border-radius:16px;border:1px solid var(--line);background:var(--glass);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px)}
-.stat b{display:block;font:700 34px/1 var(--display);letter-spacing:-.02em}
-.stat span{display:block;margin-top:8px;font:400 12px/1.4 var(--mono);color:var(--fg-dim)}
-/* glass */
-.glass{border:1px solid var(--line);background:var(--glass);backdrop-filter:blur(18px) saturate(1.15);-webkit-backdrop-filter:blur(18px) saturate(1.15);border-radius:20px}
-.band-light .glass{border-color:var(--line-ink);background:var(--glass-ink)}
-.rv{transform:translateY(18px);transition:transform .8s cubic-bezier(.2,.8,.2,1)}
-.rv.in{transform:none}
-/* about + experience */
-.two{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.3fr);gap:clamp(24px,5vw,72px)}
-.job{padding:22px 0;border-top:1px solid var(--line);display:grid;grid-template-columns:minmax(0,1fr) auto;gap:4px 16px}
-.job:last-child{border-bottom:1px solid var(--line)}
-.job h3{font-size:19px}
-.job .org{color:var(--fg-dim);font-size:15px}
-.job .when{font:400 12px var(--mono);color:var(--red);white-space:nowrap;padding-top:6px}
-/* projects */
-.proj{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:0;overflow:hidden;margin-bottom:20px}
-.proj .shot{background:#000;min-height:260px;display:flex;align-items:center}
-.proj .shot img{width:100%;height:100%;object-fit:cover;display:block;transition:transform 1.2s cubic-bezier(.2,.8,.2,1)}
-.proj:hover .shot img{transform:scale(1.04)}
-.proj .txt{padding:clamp(22px,3vw,36px);display:flex;flex-direction:column;gap:12px}
-.proj .txt p{margin:0;color:#c9c8c6;font-size:15px}
-.tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:auto;padding-top:8px}
-.tag{font:400 11.5px var(--mono);padding:5px 10px;border-radius:999px;border:1px solid var(--line);color:var(--fg-dim)}
-.band-light .tag{border-color:var(--line-ink);color:var(--fg-ink-dim)}
-.tag.hot{border-color:rgba(224,52,60,.5);color:#f0868b}
-.projrow{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px}
-.card{padding:26px}
-.card p{font-size:15px;color:#c9c8c6;margin:10px 0 16px}
-/* education / skills (light) */
-.edu{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px;margin-bottom:48px}
-.edu .glass{padding:24px}
-.edu .big{font:800 44px/1 var(--display);color:var(--red);letter-spacing:-.03em;margin:14px 0 4px}
-.edu .small{font:400 12px var(--mono);color:var(--fg-ink-dim)}
-.skills{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:36px}
-.skills span{padding:8px 14px;border-radius:999px;border:1px solid var(--line-ink);background:var(--glass-ink);font:500 13px var(--mono)}
-.cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:32px}
-.cols h3{font-size:15px;font:500 12px var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--red);margin-bottom:12px}
-.cols ul{margin:0;padding:0;list-style:none;color:var(--fg-ink)}
-.cols li{padding:7px 0;border-bottom:1px solid var(--line-ink);font-size:15px}
-/* olifante */
-.tl-scroll{overflow-x:auto;padding:8px 4px 4px;margin-top:8px}
-.tl{position:relative;min-width:760px;height:400px}
-.axis{position:absolute;left:0;right:0;top:150px;height:2px;background:linear-gradient(90deg,var(--line),rgba(236,235,233,.35) 12%,rgba(236,235,233,.35))}
-.yr{position:absolute;top:166px;font:400 11px var(--mono);color:var(--fg-dim);transform:translateX(-50%)}
-.yr::before{content:"";position:absolute;left:50%;top:-12px;width:1px;height:8px;background:var(--fg-dim)}
-.join{position:absolute;top:150px;width:0}
-.join .dot{position:absolute;left:-7px;top:-6px;width:14px;height:14px;border-radius:50%;background:var(--red);box-shadow:0 0 0 5px rgba(224,52,60,.22),0 0 22px rgba(224,52,60,.6)}
-.join .stem{position:absolute;left:-.5px;width:1px;background:var(--red);opacity:.7}
-.join .lab{position:absolute;width:250px;font-size:13px;line-height:1.4}
-.join .lab b{display:block;font:700 15px var(--display);margin-bottom:2px}
-.join .lab span{color:var(--fg-dim);font-size:12.5px}
-.join .lab em{font:400 11px var(--mono);color:var(--red);font-style:normal;display:block;margin-bottom:4px}
-.up .stem{bottom:6px;height:var(--h)} .up .lab{bottom:calc(var(--h) + 6px);left:-2px}
-.dn .stem{top:6px;height:var(--h)} .dn .lab{top:calc(var(--h) + 6px);left:-2px}
-.flip .lab{left:auto;right:-2px;text-align:right}
-.ms{position:absolute;width:11px;height:11px;border:1.5px solid var(--fg);transform:translate(-50%,-50%) rotate(45deg);background:var(--ink);top:150px}
-.lane{position:absolute;height:26px;border-radius:7px;border:1px solid var(--line);background:var(--glass);display:flex;align-items:center;padding:0 10px;font:500 11.5px var(--mono);white-space:nowrap;color:var(--fg)}
-.lane.open{border-right:0;border-radius:7px 0 0 7px;background:linear-gradient(90deg,var(--glass),rgba(236,235,233,.02) 90%);justify-content:flex-start}
-.lane.open::after{content:"ongoing";margin-left:10px;color:var(--fg-dim);font-weight:400}
-.lbl-out{position:absolute;font:500 11.5px var(--mono);color:var(--fg-dim);white-space:nowrap}
-.motto{font:700 clamp(20px,3vw,30px)/1.25 var(--display);letter-spacing:-.01em;margin:0 0 26px;max-width:28ch}
-.motto em{color:var(--red);font-style:normal}
-/* karate */
-.kar{display:grid;grid-template-columns:repeat(6,1fr);gap:14px;margin-top:8px}
-.kar figure{margin:0;overflow:hidden;border-radius:18px;position:relative;background:#111}
-.kar figure img{width:100%;height:100%;object-fit:cover;display:block;transition:transform 1.2s cubic-bezier(.2,.8,.2,1)}
-.kar figure:hover img{transform:scale(1.05)}
-.kar figcaption{position:absolute;left:12px;bottom:12px;font:500 11px var(--mono);letter-spacing:.06em;padding:6px 10px;border-radius:999px;background:rgba(13,14,16,.6);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);color:#ecebe9}
-.f1{grid-column:span 4;aspect-ratio:1/.9}.f1 img{object-position:50% 0} .f2{grid-column:span 2;aspect-ratio:auto} .f3{grid-column:span 3;aspect-ratio:4/3} .f4{grid-column:span 3}
-.medals{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin-top:28px}
-.medals div{padding:18px 20px;border-radius:16px}
-.medals b{display:block;font:700 18px/1.2 var(--display);margin-bottom:4px}
-.medals span{font:400 12px var(--mono);color:var(--fg-ink-dim)}
-/* contact */
-.contact{text-align:left}
+<link rel="stylesheet" href="css/site.css">
+</head>
+<body>
 
-.mail{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin:8px 0 22px}
-.mail code{font:500 clamp(15px,2.4vw,22px) var(--mono);padding:12px 18px;border-radius:14px;border:1px solid var(--line);background:var(--glass);word-break:break-all}
-footer{padding-block:28px 40px;border-top:1px solid var(--line);font:400 12px var(--mono);color:var(--fg-dim);display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
-@media(max-width:760px){
-  .two,.proj{grid-template-columns:minmax(0,1fr)}
-  .proj .shot{min-height:200px}
-  .links{display:none}
-  .kar{grid-template-columns:1fr 1fr}.f1{grid-column:span 2}.f2,.f3{grid-column:span 1}.f4{grid-column:span 2}
-  .job{grid-template-columns:minmax(0,1fr)}
-}
-@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{transform:none}}
-
-/* bento restyle */
-.glass{border-radius:28px}
-h2{font-size:clamp(40px,7vw,84px);font-weight:800;text-transform:uppercase;letter-spacing:-.025em;line-height:.95;margin-bottom:36px}
-h2 .d{color:#3b3c41;display:block}
-.band-light h2 .d{color:#b9b8b5}
-.eyebrow{display:inline-flex;align-items:center;gap:10px}
-.eyebrow::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--red);box-shadow:0 0 12px var(--red)}
-nav{margin:14px auto 0;max-width:1080px;padding:8px 8px 8px 20px;border-radius:999px;border:1px solid var(--line);inset-inline:0;background:rgba(21,22,26,.6)}
-nav{margin-inline:auto}
-.nav-in{max-width:none}
-.links a{padding:9px 14px;border-radius:999px;transition:background .2s,color .2s}
-.links a:hover{background:rgba(236,235,233,.08)}
-.links a.on{background:rgba(224,52,60,.18);color:#fff}
-.rail{position:fixed;left:max(12px,env(safe-area-inset-left,0px));top:50%;transform:translateY(-50%);z-index:15;display:flex;flex-direction:column;gap:6px;padding:10px;border-radius:999px;border:1px solid var(--line);background:rgba(21,22,26,.6);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px)}
-.rail a{width:40px;height:40px;border-radius:50%;display:grid;place-items:center;font:600 12px var(--mono);text-decoration:none;color:var(--fg-dim);transition:background .2s,color .2s}
-.rail a:hover{background:var(--red);color:#fff}
-@media(max-width:1240px){.rail{display:none}}
-.bento{display:grid;grid-template-columns:repeat(12,1fr);grid-auto-rows:minmax(0,auto);gap:16px;margin-top:20px}
-.bento>*{min-width:0}
-.t{padding:clamp(22px,3vw,34px);border-radius:28px;position:relative;overflow:hidden}
-.t-name{grid-column:span 5;grid-row:span 2;display:flex;flex-direction:column;justify-content:space-between}
-.t-photo{grid-column:span 4;grid-row:span 2;padding:0}
-.t-photo img{width:100%;height:100%;object-fit:cover;object-position:50% 12%;display:block;min-height:340px}
-.t-photo figcaption{position:absolute;left:14px;bottom:14px;font:500 11px var(--mono);letter-spacing:.06em;padding:7px 11px;border-radius:999px;background:rgba(13,14,16,.62);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
-.t-about{grid-column:span 3;grid-row:span 2}
-.t-about h3{font-size:15px;font:600 14px var(--mono);letter-spacing:.1em;text-transform:uppercase;display:flex;gap:8px;align-items:center}
-.t-about p{font-size:15px;color:#c9c8c6;margin-top:14px}
-.t-red{grid-column:span 4;background:var(--red);color:#fff;border:0;min-height:170px;display:flex;flex-direction:column;justify-content:flex-end}
-.t-red::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 85% 0,rgba(255,255,255,.28),transparent 55%),repeating-linear-gradient(135deg,rgba(0,0,0,.08) 0 2px,transparent 2px 22px)}
-.t-red b,.t-lt b{position:relative;font:800 clamp(20px,2.4vw,28px)/1.05 var(--display);text-transform:uppercase;letter-spacing:-.01em}
-.t-lt{grid-column:span 4;background:var(--paper);color:var(--fg-ink);border:0;min-height:170px;display:flex;flex-direction:column;justify-content:flex-end}
-.t-lt b{font-size:clamp(17px,2vw,22px);line-height:1.15}
-.t-n{grid-column:span 3;display:flex;flex-direction:column;justify-content:space-between;min-height:150px;padding:20px 22px}
-.t-n b{font:800 clamp(30px,3.6vw,46px)/1 var(--display);letter-spacing:-.02em}
-.t-n span{font:400 11.5px/1.4 var(--mono);color:var(--fg-dim);margin-top:14px}
-.t-quote{grid-column:span 4;display:flex;align-items:flex-end;min-height:150px}
-.t-quote p{margin:0;font:700 clamp(18px,2.2vw,24px)/1.2 var(--display);max-width:none}
-.t-quote em{color:var(--red);font-style:normal}
-.t-cta{grid-column:span 12;display:flex;gap:12px;flex-wrap:wrap;align-items:center;justify-content:space-between;padding:22px 26px}
-.t-cta .cta{margin:0;animation:none}
-.t-cta p{margin:0;font:500 13px var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--fg-dim);max-width:none}
-.glowh{position:relative}
-.glowh::after{content:"";position:absolute;left:0;top:50%;width:min(420px,70%);height:120px;transform:translateY(-50%);background:radial-gradient(closest-side,rgba(224,52,60,.4),transparent);filter:blur(24px);z-index:-1;animation:pulse 5s ease-in-out infinite alternate}
-@keyframes pulse{to{opacity:.45;transform:translateY(-50%) scale(1.15)}}
-@media(max-width:900px){.t-name,.t-photo,.t-about,.t-red,.t-lt,.t-quote{grid-column:span 12}.t-photo{grid-row:auto}.t-photo img{min-height:280px;max-height:380px}.t-n{grid-column:span 6}.t-name{grid-row:auto}}
-.oli{display:grid;grid-template-columns:minmax(0,.7fr) minmax(0,1.3fr);gap:clamp(20px,4vw,48px);align-items:center;margin-bottom:28px}
-.oli-ph{margin:0;overflow:hidden;position:relative;aspect-ratio:4/5;max-height:520px}
-.oli-ph img{width:100%;height:100%;object-fit:cover;display:block}
-.oli-ph figcaption{position:absolute;left:12px;bottom:12px;font:500 11px var(--mono);letter-spacing:.06em;padding:6px 10px;border-radius:999px;background:rgba(13,14,16,.62);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
-.oli-tx p:last-child{margin-bottom:0}
-@media(max-width:760px){.oli{grid-template-columns:minmax(0,1fr)}.oli-ph{max-height:420px}}
-.two h2{font-size:clamp(34px,4.6vw,58px)}
-.olihead{display:flex;justify-content:space-between;align-items:flex-start;gap:24px;flex-wrap:wrap}
-.oli-logo{width:clamp(130px,16vw,200px);height:auto;margin-top:6px;opacity:.9;animation:fade 1.2s .3s both}
-.dojo{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:14px;margin-top:28px}
-.dojo .glass{padding:22px 24px}
-.dojo .k{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--red)}
-.dojo h3{margin:10px 0 8px;font-size:20px}
-.dojo p{font-size:14.5px;color:var(--fg-ink-dim);margin:0}
-.dojo + p{margin:14px 0 0}.dojo + p + .medals{margin-top:16px}
-.about-ph{margin:28px 0 0;max-width:340px;aspect-ratio:4/5;overflow:hidden}
-.about-ph img{width:100%;height:100%;object-fit:cover;object-position:50% 15%;display:block}
-.sch{display:grid;grid-template-columns:repeat(12,1fr);gap:16px;margin-top:28px}
-.sch figure{margin:0;position:relative;overflow:hidden}
-.sch figure img{width:100%;height:100%;object-fit:cover;display:block;min-height:320px}
-.sch figcaption{position:absolute;left:12px;bottom:12px;font:500 11px var(--mono);letter-spacing:.06em;padding:6px 10px;border-radius:999px;background:rgba(13,14,16,.62);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
-.sch-a{grid-column:span 4;aspect-ratio:3/4}.sch-b{grid-column:span 4}
-.sch-c{grid-column:span 4;display:flex;flex-direction:column;gap:16px}
-.sch-c .glass{padding:24px;flex:1}
-.sch-c .k{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--red)}
-.sch-c h3{margin:10px 0 8px;font-size:19px}
-.sch-c p{margin:0;font-size:14.5px;color:var(--fg-dim)}
-.f5{grid-column:span 3;aspect-ratio:1/1}.f7{grid-column:span 6;aspect-ratio:16/8}
-@media(max-width:900px){.sch-a,.sch-b,.sch-c{grid-column:span 12}.sch-a{aspect-ratio:3/4;max-height:520px}.sch-b{aspect-ratio:1/1}.about-ph{max-width:100%}}
-@media(max-width:760px){.f5{grid-column:span 1}.f7{grid-column:span 2}}
-.reps{display:grid;gap:12px;max-width:980px}.rep{padding:0;overflow:hidden;cursor:default;outline:none;transition:border-color .3s,background .3s}.rep:hover,.rep:focus-within,.rep.open{border-color:rgba(214,40,50,.55)}.rep-h{display:flex;align-items:center;gap:18px;padding:22px 26px}.rep-h .k{color:var(--red);font-size:12px;letter-spacing:.08em;min-width:64px}.rep-h h3{font-size:clamp(16px,2.2vw,21px);margin:0;flex:1}.pl{width:14px;height:14px;position:relative;flex:none}.pl::before,.pl::after{content:"";position:absolute;background:#c9c8c6;left:0;right:0;top:6px;height:2px;transition:transform .35s}.pl::after{transform:rotate(90deg)}.rep:hover .pl::after,.rep:focus-within .pl::after,.rep.open .pl::after{transform:rotate(0)}.rep-b{display:grid;grid-template-rows:0fr;transition:grid-template-rows .45s cubic-bezier(.2,.7,.2,1)}.rep:hover .rep-b,.rep:focus-within .rep-b,.rep.open .rep-b{grid-template-rows:1fr}.rep-bi{overflow:hidden;min-height:0;padding:0 26px;opacity:0;transition:opacity .35s,padding .45s}.rep:hover .rep-bi,.rep:focus-within .rep-bi,.rep.open .rep-bi{opacity:1;padding:0 26px 26px}.rep-bi p{font-size:15px;color:#c9c8c6;margin:0;max-width:64ch}.rep-s{display:flex;flex-wrap:wrap;gap:12px 28px;margin-top:18px}.rep-s div{display:flex;flex-direction:column;gap:2px}.rep-s b{font:700 24px var(--display,inherit);color:#fff;letter-spacing:-.01em}.rep-s span{font:400 11px var(--mono);color:#9a9a9f;letter-spacing:.04em}.rep-f{margin-top:20px;max-width:620px}.rep-f.n3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;max-width:980px;align-items:start}@media(max-width:900px){.rep-f.n3{grid-template-columns:1fr}}.rep-h h3 .tp{color:#9a9a9f;font-weight:600}.rep-h h3 i{font-style:normal;color:var(--red);margin:0 .5em}.rep-f.n2.eq{align-items:stretch;grid-template-columns:1fr 1fr;max-width:980px}.rep-f.n2{display:grid;grid-template-columns:1.5fr 1fr;gap:14px;max-width:820px;align-items:start}@media(max-width:700px){.rep-f.n2{grid-template-columns:1fr}}.rep-f figure{margin:0;background:#fff;border-radius:14px;padding:10px 10px 8px;overflow:hidden}.rep-f img{width:100%;height:auto;display:block}.rep-f figcaption{font:400 11px var(--mono);color:#55565b;padding:6px 4px 0;letter-spacing:.02em}
-.about-ph{margin:0;justify-self:end;width:100%}.exp{margin-top:56px}.exp .jobs{display:grid;grid-template-columns:repeat(3,1fr);gap:0 32px}.exp .job{grid-template-columns:1fr;align-content:start;border-bottom:1px solid var(--line)}.exp .when{order:-1}@media(max-width:900px){.exp .jobs{grid-template-columns:1fr}.about-ph{justify-self:start}}
-#intro{position:fixed;inset:0;z-index:1000;background:#0a0a0c;display:grid;place-items:center;animation:introOut .8s cubic-bezier(.76,0,.2,1) 1.55s forwards}
-#intro::before{content:"";position:absolute;width:60vmax;height:60vmax;border-radius:50%;background:radial-gradient(circle,rgba(224,52,60,.28),transparent 62%);animation:introGlow 2s ease-out both}
-.intro-in{position:relative;text-align:center;padding:0 20px}
-.intro-n{font:800 clamp(34px,7vw,72px)/1 'Bricolage Grotesque',sans-serif;letter-spacing:-.025em;color:#f2f1ef;overflow:hidden;display:flex;justify-content:center;gap:.26em}
-.intro-n span{display:inline-block;transform:translateY(110%);animation:introUp .75s cubic-bezier(.2,.8,.2,1) forwards}
-.intro-n span:nth-child(2){animation-delay:.12s}
-.intro-n b{color:#e0343c}
-.intro-s{margin-top:16px;font:500 12px/1 'JetBrains Mono',monospace;letter-spacing:.18em;text-transform:uppercase;color:#8a8a90;opacity:0;animation:introFade .6s ease .55s forwards}
-.intro-l{margin:26px auto 0;width:min(240px,60vw);height:2px;background:rgba(255,255,255,.1);overflow:hidden}
-.intro-l i{display:block;height:100%;background:#e0343c;transform:scaleX(0);transform-origin:left;animation:introBar 1.2s cubic-bezier(.6,0,.2,1) .2s forwards}
-@keyframes introUp{to{transform:none}}
-@keyframes introFade{to{opacity:1}}
-@keyframes introBar{to{transform:none}}
-@keyframes introGlow{from{opacity:0;transform:scale(.6)}to{opacity:1;transform:none}}
-@keyframes introOut{to{transform:translateY(-100%);visibility:hidden}}
-@media(prefers-reduced-motion:reduce){#intro{display:none}}
-.sch2{display:grid;grid-template-columns:repeat(12,1fr);gap:16px;margin-top:16px}.sch2 figure{margin:0;position:relative;overflow:hidden;grid-column:span 6;aspect-ratio:4/3}.sch2 img{width:100%;height:100%;object-fit:cover;display:block}.sch2 figcaption{position:absolute;left:12px;bottom:12px;font:500 11px var(--mono);letter-spacing:.06em;padding:6px 10px;border-radius:999px;background:rgba(13,14,16,.62);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}.ct-g{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:48px;align-items:center}.ct-ph{display:grid;grid-template-columns:1fr 1fr;gap:14px}.ct-ph figure{margin:0;overflow:hidden;aspect-ratio:3/4}.ct-ph figure:nth-child(2){margin-top:48px}.ct-ph img{width:100%;height:100%;object-fit:cover;display:block}@media(max-width:900px){.sch2 figure{grid-column:span 12}.ct-g{grid-template-columns:1fr;gap:28px}}
-picture{display:contents}
-/* lite mode: phones, touch devices and low-power machines (set by the script at the top) */
-.lite .glass,.lite nav,.lite .nav-in,.lite .sch figcaption,.lite .sch2 figcaption,.lite .kar figcaption,.lite .proj figcaption,.lite figcaption{backdrop-filter:none!important;-webkit-backdrop-filter:none!important}
-.lite .glass{background:rgba(26,26,30,.9)}
-.lite .band-light .glass{background:rgba(255,255,255,.78);border-color:rgba(0,0,0,.08)}
-.lite .nav-in{background:rgba(16,16,18,.92)}
-.lite .orb{filter:none;animation:none!important;will-change:auto}
-.lite .orb.o1{opacity:.7;background:radial-gradient(circle,rgba(156,29,38,.6),transparent 68%)}
-.lite .orb.o2,.lite .orb.o3{display:none}
-.lite .kar figure img,.lite .kar figure:hover img{transition:none;transform:none}
-.lite .rv{transition-duration:.45s}
-.lite #intro{animation-duration:.6s;animation-delay:1.2s}
-.lite .intro-n span,.lite .intro-s,.lite .intro-l i{animation-duration:.5s}
-.lite .intro-l i{animation-duration:.9s}
-.lite #intro::before{display:none}
-html.lite{scroll-behavior:auto}
-@media(max-width:760px){.kar>figure{grid-column:span 2!important;aspect-ratio:4/3!important}.kar>figure.f5{grid-column:span 1!important;aspect-ratio:1/1!important}.kar>figure.f2{aspect-ratio:4/5!important}.eyebrow{line-height:1.6}}
-</style>
-
-<div id="intro" aria-hidden="true"><div class="intro-in"><div class="intro-n"><span>Charl</span><span>Marais<b>.</b></span></div><div class="intro-s">Electrical Engineering · University of Pretoria</div><div class="intro-l"><i></i></div></div></div>
+<a class="skip" href="#main">Skip to Content</a>
+<div id="intro" aria-hidden="true"><div class="intro-in"><div class="intro-n" translate="no"><span>Charl</span><span>Marais<b>.</b></span></div><div class="intro-s">Electrical Engineering · University of Pretoria</div><div class="intro-l"><i></i></div></div></div>
 <div class="orbs" aria-hidden="true"><div class="orb o1"></div><div class="orb o2"></div><div class="orb o3"></div></div>
 
-<div class="rail" aria-label="Links"><a href="https://www.linkedin.com/in/charl-marais-184646199" target="_blank" rel="noopener" title="LinkedIn">in</a><a href="#contact" title="Email">@</a><a href="#top" title="Top">↑</a></div>
-<nav><div class="nav-in">
-  <a class="logo" href="#top">Charl Marais<b>.</b></a>
-  <div class="links"><a href="#about">About</a><a href="#projects">Projects</a><a href="#education">Education</a><a href="#school">School</a><a href="#reports">Practicals</a><a href="#olifante">Olifante</a><a href="#karate">Karate</a><a href="#contact">Contact</a></div>
-</div></nav>
-
-<div class="wrap" id="top">
-<header class="hero" style="padding-block:clamp(40px,7vw,80px) clamp(24px,4vw,48px)">
-  <div class="bento">
-    <div class="t glass t-name">
-      <p class="eyebrow">Portfolio · Pretoria, South Africa</p>
-      <h1 style="font-size:clamp(40px,6.2vw,76px);font-weight:800;text-transform:uppercase;line-height:.92;letter-spacing:-.03em"><span><i>Charl-<br>Francois</i></span><span><i style="color:#4a4b51">Marais</i></span></h1>
-      <p class="role" style="margin:22px 0 0">3rd year electrical engineering<br>University of Pretoria</p>
+<header class="site-nav">
+  <nav class="nav-in" aria-label="Primary">
+    <a class="logo" href="#top" translate="no">Charl Marais<b>.</b></a>
+    <div class="links">
+      <a href="#about">About</a><a href="#projects">Projects</a><a href="#education">Education</a><a href="#school">School</a><a href="#practicals">Practicals</a><a href="#olifante">Olifante</a><a href="#karate">Karate</a><a href="#contact">Contact</a>
     </div>
-    <figure class="t glass t-photo" style="margin:0"><picture><source media="(max-width:760px)" srcset="img/01-portrait-of-charl-marais-in-a-dark-suit-s.jpg"><img src="img/01-portrait-of-charl-marais-in-a-dark-suit.jpg" alt="Portrait of Charl Marais in a dark suit" style="object-position:50% 20%" loading="eager" decoding="async"></picture><figcaption>Charl Marais</figcaption></figure>
-    <div class="t glass t-about">
-      <h3>● Profile</h3>
+  </nav>
+</header>
+
+<main id="main">
+<div class="wrap">
+<section class="hero" id="top" aria-label="Introduction">
+  <div class="bento">
+    <div class="tile glass t-name">
+      <p class="eyebrow">Portfolio · Pretoria, South Africa</p>
+      <h1 translate="no"><span><i>Charl-<br>Francois</i></span><span><i>Marais</i></span></h1>
+      <p class="role">3rd Year Electrical Engineering<br>University of Pretoria</p>
+    </div>
+    <figure class="photo tile glass t-photo"><picture><source media="(max-width:760px)" srcset="img/hero-portrait-s.jpg"><img src="img/hero-portrait.jpg" alt="Portrait of Charl Marais in a dark suit" width="805" height="1005" style="object-position:50% 20%" loading="eager" fetchpriority="high" decoding="async"></picture><figcaption class="cap">Charl Marais</figcaption></figure>
+    <div class="tile glass t-about">
+      <h2 class="tile-h">Profile</h2>
       <p>Electrical engineering student working on analogue electronics, PCB design and embedded firmware, with 3D-printed enclosures for the hardware.</p>
       <p>Interests: control systems, power generation and distribution, robotics and automation.</p>
-      <div class="tags" style="margin-top:18px"><span class="tag hot">KiCad</span><span class="tag">STM32</span><span class="tag">C++</span><span class="tag">Python</span><span class="tag">MATLAB</span></div>
+      <div class="tags"><span class="tag hot">KiCad</span><span class="tag">STM32</span><span class="tag">C++</span><span class="tag">Python</span><span class="tag">MATLAB</span></div>
     </div>
-    <div class="t t-red"><b>Control systems · Power · Robotics</b></div>
-    <div class="t t-lt"><b>C++ · Python · MATLAB · LTspice · SolidWorks · LaTeX · VHDL</b></div>
-    <div class="t glass t-quote"><p>Engineer in Training at Cape Gate, <em>Dec 2025 – present</em></p></div>
-    <div class="t glass t-n"><b>80.0%</b><span>cumulative GPA, B.Eng</span></div>
-    <div class="t glass t-n"><b>2024</b><span>Dean’s Merit List</span></div>
-    <div class="t glass t-n"><b>84.42%</b><span>NSC final aggregate</span></div>
-    <div class="t glass t-n"><b>2015</b><span>karate since Aug 2015</span></div>
-    <div class="t glass t-cta"><p>Contact for work or collaboration</p>
-      <div class="cta"><a class="btn primary" href="#projects">See my work</a><a class="btn" href="#contact">Get in touch</a><a class="btn" href="https://www.linkedin.com/in/charl-marais-184646199" target="_blank" rel="noopener">LinkedIn ↗</a></div></div>
+    <div class="tile t-red"><p>Under contract until 2030</p></div>
+    <div class="tile glass t-now"><p>Engineer in Training at Cape Gate, <em>Dec&nbsp;2025 – present</em></p></div>
+    <div class="tile glass t-n"><b>80.0%</b><span>cumulative GPA, B.Eng</span></div>
+    <div class="tile glass t-n"><b>2024</b><span>Dean’s Merit List</span></div>
+    <div class="tile glass t-n"><b>84.42%</b><span>NSC final aggregate</span></div>
+    <div class="tile glass t-n"><b>2015</b><span>karate since Aug&nbsp;2015</span></div>
+    <div class="tile glass t-cta"><p>Contact for work or collaboration</p>
+      <div class="cta"><a class="btn primary" href="#projects">See My Work</a><a class="btn" href="#contact">Get in Touch</a><a class="btn" href="https://www.linkedin.com/in/charl-marais-184646199" target="_blank" rel="noopener">LinkedIn <span aria-hidden="true">↗</span><span class="sr-only">(opens in a new tab)</span></a></div></div>
   </div>
-</header>
+</section>
 </div>
 
 <div class="wrap">
-<section id="about">
-  <div class="two">
+<section id="about" aria-labelledby="about-h">
+  <div class="about">
     <div class="rv">
       <p class="eyebrow">About</p>
-      <h2>Background<span class="d">&amp; Experience</span></h2>
-      <p class="dim">I started the B.Eng in February 2024 and work as an Engineer in Training at Cape Gate alongside my studies. I also tutor maths and physics, and was a teaching assistant in the University of Pretoria’s Department of Mathematics and Applied Mathematics from March to June 2026.</p>
+      <h2 id="about-h">Background<span class="d">&amp; Experience</span></h2>
+      <p class="dim">I started the B.Eng in February&nbsp;2024 and work as an Engineer in Training at Cape Gate alongside my studies. I also tutor maths and physics, and was a teaching assistant in the University of Pretoria’s Department of Mathematics and Applied Mathematics from March to June&nbsp;2026.</p>
       <p class="dim">Tools: C++, Python, MATLAB, LTspice, SolidWorks, LaTeX and VHDL.</p>
-      
     </div>
-    <figure class="about-ph glass"><picture><source media="(max-width:760px)" srcset="img/02-formal-portrait-of-charl-marais-s.jpg"><img src="img/02-formal-portrait-of-charl-marais.jpg" alt="Formal portrait of Charl Marais" loading="eager" decoding="async"></picture></figure>
+    <figure class="photo about-ph glass"><picture><source media="(max-width:760px)" srcset="img/about-formal-s.jpg"><img src="img/about-formal.jpg" alt="Formal portrait of Charl Marais" width="900" height="900" style="object-position:50% 15%" loading="eager" fetchpriority="high" decoding="async"></picture></figure>
   </div>
   <div class="rv exp">
-      <p class="eyebrow">Experience</p>
-      <div class="jobs"><div class="job"><div><h3>Engineer in Training</h3><div class="org">Cape Gate (PTY) LTD</div></div><div class="when">Dec 2025 – Present</div></div>
-      <div class="job"><div><h3>Maths &amp; Physics Tutor</h3><div class="org">Preply (part time)</div></div><div class="when">Jan 2026 – Present</div></div>
-      <div class="job"><div><h3>Teaching Assistant</h3><div class="org">University of Pretoria, Dept. of Mathematics &amp; Applied Mathematics</div></div><div class="when">Mar 2026 – Jun 2026</div></div></div>
-    </div>
+    <p class="eyebrow">Experience</p>
+    <ul class="jobs">
+      <li class="job"><h3>Engineer in Training</h3><span class="org">Cape Gate (PTY) LTD</span><time>Dec 2025 – Present</time></li>
+      <li class="job"><h3>Maths &amp; Physics Tutor</h3><span class="org">Preply (part time)</span><time>Jan 2026 – Present</time></li>
+      <li class="job"><h3>Teaching Assistant</h3><span class="org">University of Pretoria, Dept. of Mathematics &amp; Applied Mathematics</span><time>Mar 2026 – Jun 2026</time></li>
+    </ul>
+  </div>
 </section>
 
-<section id="projects">
+<section id="projects" aria-labelledby="projects-h">
   <p class="eyebrow">Work</p>
-  <h2 class="rv">Selected<span class="d">Projects</span></h2>
+  <h2 class="rv" id="projects-h">Selected<span class="d">Projects</span></h2>
 
   <article class="proj glass rv">
-    <div class="shot"><picture><source media="(max-width:760px)" srcset="img/03-annotated-black-render-of-the-pbcco-o100-s.jpg"><img src="img/03-annotated-black-render-of-the-pbcco-o100.jpg" alt="Annotated black render of the PBCCO-O1000 test PCB" loading="lazy" decoding="async"></picture></div>
+    <div class="shot"><picture><source media="(max-width:760px)" srcset="img/pcb-render-s.jpg"><img src="img/pcb-render.jpg" alt="Annotated black render of the PBCCO-O1000 test PCB" width="1300" height="855" loading="lazy" decoding="async"></picture></div>
     <div class="txt">
-      <p class="mono" style="color:var(--red);font-size:12px">EPR320 · ongoing · sole designer</p>
-      <h3>PBCCO-O1000 impedance analyser front end</h3>
+      <p class="meta">EPR320 · ongoing · sole designer</p>
+      <h3><span translate="no">PBCCO-O1000</span> impedance analyser front end</h3>
       <p>A DIY differential-input oscilloscope built as the measurement core of a full impedance analyser for EPR320. I am the author, designer and systems engineer. It went through several design iterations: a breadboard on lab supplies, a veroboard with a charge pump, and now a fabricated PCB.</p>
-      <p>Analogue RMS, peak and zero-crossing front end, ±8 V op-amp rails from two buck converters, an STM32 NUCLEO-L432KC, a 2.8″ ILI9341 screen and two rotary encoders for the menu.</p>
+      <p>Analogue RMS, peak and zero-crossing front end, ±8&nbsp;V op-amp rails from two buck converters, an STM32 NUCLEO-L432KC, a 2.8″ ILI9341 screen and two rotary encoders for the menu.</p>
       <div class="tags"><span class="tag hot">KiCad</span><span class="tag">LTspice</span><span class="tag">STM32</span><span class="tag">Analogue design</span><span class="tag">JLCPCB</span></div>
     </div>
   </article>
 
   <article class="proj glass rv">
-    <div class="shot"><picture><source media="(max-width:760px)" srcset="img/04-annotated-black-render-of-the-pbcco-o100-s.jpg"><img src="img/04-annotated-black-render-of-the-pbcco-o100.jpg" alt="Annotated black render of the PBCCO-O1000 housing, version 4" loading="lazy" decoding="async"></picture></div>
+    <div class="shot"><picture><source media="(max-width:760px)" srcset="img/housing-render-s.jpg"><img src="img/housing-render.jpg" alt="Annotated black render of the PBCCO-O1000 housing, version 4" width="1300" height="928" loading="lazy" decoding="async"></picture></div>
     <div class="txt">
-      <p class="mono" style="color:var(--red);font-size:12px">EPR320 · enclosure</p>
+      <p class="meta">EPR320 · enclosure</p>
       <h3>3D-printed instrument housing</h3>
-      <p>A PLA enclosure designed in Fusion for the PBCCO-O1000, now on its fourth concept. It has a single recessed front panel carrying the screen and the two encoders, ventilation, and a click-detent handle that doubles as a tilt stand.</p>
+      <p>A PLA enclosure designed in Fusion for the <span translate="no">PBCCO-O1000</span>, now on its fourth concept. It has a single recessed front panel carrying the screen and the two encoders, ventilation, and a click-detent handle that doubles as a tilt stand.</p>
       <div class="tags"><span class="tag hot">Fusion</span><span class="tag">PLA</span><span class="tag">Design for print</span></div>
     </div>
   </article>
 
   <div class="projrow">
     <article class="card glass rv">
-      <p class="mono" style="color:var(--red);font-size:12px">Personal · Apr 2026 – Present</p>
+      <p class="meta">Personal · Apr 2026 – Present</p>
       <h3>Robotic arm prototype</h3>
       <p>An ongoing build covering analogue sensor design, servo and stepper motor control, and an assembly state machine with its firmware.</p>
       <div class="tags"><span class="tag">Sensors</span><span class="tag">Motor control</span><span class="tag">Firmware</span></div>
     </article>
     <article class="card glass rv">
-      <p class="mono" style="color:var(--red);font-size:12px">EIR210 · May 2025 · with the Olifantes</p>
+      <p class="meta">EIR210 · May 2025 · with the Olifantes</p>
       <h3>DC motor project</h3>
-      <p>Group project for the EIR210 module, completed in May 2025 with the Olifantes.</p>
+      <p>Group project for the EIR210 module, completed in May&nbsp;2025 with the Olifantes.</p>
       <div class="tags"><span class="tag">Team project</span><span class="tag">Motors</span></div>
     </article>
   </div>
@@ -377,16 +122,16 @@ html.lite{scroll-behavior:auto}
 </div>
 
 <div class="band-light" id="education"><div class="wrap">
-<section>
+<section aria-labelledby="edu-h">
   <p class="eyebrow">Education</p>
-  <h2 class="rv">Academic<span class="d">Record</span></h2>
+  <h2 class="rv" id="edu-h">Academic<span class="d">Record</span></h2>
   <div class="edu">
     <div class="glass rv"><div class="small">Feb 2024 – present</div><div class="big">80.0%</div><h3>B.Eng Electrical Engineering</h3><div class="small">University of Pretoria · cumulative average</div></div>
     <div class="glass rv"><div class="small">Jan 2019 – Dec 2023</div><div class="big">84.42%</div><h3>National Senior Certificate</h3><div class="small">Hoërskool Oos-Moot · final aggregate</div></div>
     <div class="glass rv"><div class="small">May 2021 – Oct 2023</div><div class="big">85.0%</div><h3>Advanced Programme Mathematics</h3><div class="small">Admaths (PTY) LTD · further studies</div></div>
   </div>
   <p class="eyebrow">Skills</p>
-  <div class="skills rv"><span>C++</span><span>Python</span><span>MATLAB</span><span>LTspice</span><span>SolidWorks</span><span>LaTeX</span><span>VHDL</span><span>Assembly</span><span>MS Office</span><span>Robotics / Mechatronics</span><span>MV/LV maintenance</span></div>
+  <ul class="skills rv"><li>C++</li><li>Python</li><li>MATLAB</li><li>LTspice</li><li>SolidWorks</li><li>LaTeX</li><li>VHDL</li><li>Assembly</li><li>MS Office</li><li>Robotics / Mechatronics</li><li>MV/LV maintenance</li></ul>
   <div class="cols rv">
     <div><h3>Achievements</h3><ul>
       <li>Dean’s Merit List, Faculty of Engineering, 2024</li>
@@ -401,117 +146,176 @@ html.lite{scroll-behavior:auto}
 </div></div>
 
 <div class="wrap">
-<section id="school">
+<section id="school" aria-labelledby="school-h">
   <p class="eyebrow">School</p>
-  <h2 class="rv">School<span class="d">&amp; Stage</span></h2>
-  <p class="dim rv" style="max-width:62ch">Hoërskool Oos-Moot, January 2019 to December 2023. I finished with a final NSC aggregate of 84.42%, and completed Advanced Programme Mathematics through Admaths with 85.0%.</p>
+  <h2 class="rv" id="school-h">School<span class="d">&amp; Stage</span></h2>
+  <p class="lead rv">Hoërskool Oos-Moot, January&nbsp;2019 to December&nbsp;2023. I finished with a final NSC aggregate of 84.42%, and completed Advanced Programme Mathematics through Admaths with 85.0%.</p>
   <div class="sch rv">
-    <figure class="glass sch-a"><picture><source media="(max-width:760px)" srcset="img/05-charl-receiving-a-certificate-on-stage-a-s.jpg"><img src="img/05-charl-receiving-a-certificate-on-stage-a.jpg" alt="Charl receiving a certificate on stage at a school prizegiving" loading="lazy" decoding="async"></picture><figcaption>School prizegiving</figcaption></figure>
-    <figure class="glass sch-b"><picture><source media="(max-width:760px)" srcset="img/06-cast-on-stage-in-joseph-and-the-technico-s.jpg"><img src="img/06-cast-on-stage-in-joseph-and-the-technico.jpg" alt="Cast on stage in Joseph and the Technicolour Dreamcoat" loading="lazy" decoding="async"></picture><figcaption>Joseph &amp; the Technicolour Dreamcoat</figcaption></figure>
+    <figure class="photo glass sch-a"><picture><source media="(max-width:760px)" srcset="img/school-prizegiving-s.jpg"><img src="img/school-prizegiving.jpg" alt="Charl receiving a certificate on stage at a school prizegiving" width="900" height="1200" loading="lazy" decoding="async"></picture><figcaption class="cap">School prizegiving</figcaption></figure>
+    <figure class="photo glass sch-b"><picture><source media="(max-width:760px)" srcset="img/school-joseph-s.jpg"><img src="img/school-joseph.jpg" alt="Cast on stage in Joseph and the Technicolour Dreamcoat" width="950" height="950" loading="lazy" decoding="async"></picture><figcaption class="cap">Joseph &amp; the Technicolour Dreamcoat</figcaption></figure>
     <div class="sch-c">
-      <div class="glass"><span class="mono k">Lead Actor</span><h3>Joseph &amp; the Technicolour Dreamcoat</h3><p>September 2022 to August 2023.</p></div>
-      <div class="glass"><span class="mono k">Debate Team</span><h3>Hoërskool Oos-Moot &amp; Conspirito Cultural Society</h3><p>February 2020 to August 2023.</p></div>
+      <div class="glass"><span class="k">Lead Actor</span><h3>Joseph &amp; the Technicolour Dreamcoat</h3><p>September 2022 to August 2023.</p></div>
+      <div class="glass"><span class="k">Debate Team</span><h3>Hoërskool Oos-Moot &amp; Conspirito Cultural Society</h3><p>February 2020 to August 2023.</p></div>
     </div>
   </div>
-<div class="sch2 rv"><figure class="glass"><picture><source media="(max-width:760px)" srcset="img/07-four-school-friends-in-lab-coats-and-saf-s.jpg"><img src="img/07-four-school-friends-in-lab-coats-and-saf.jpg" alt="Four school friends in lab coats and safety glasses at a chemistry practical" style="object-position:50% 40%" loading="lazy" decoding="async"></picture><figcaption>Chemistry practical</figcaption></figure><figure class="glass"><picture><source media="(max-width:760px)" srcset="img/08-four-friends-with-a-pool-toy-and-a-rubbe-s.jpg"><img src="img/08-four-friends-with-a-pool-toy-and-a-rubbe.jpg" alt="Four friends with a pool toy and a rubber duck outside, Grade 11 week" style="object-position:50% 35%" loading="lazy" decoding="async"></picture><figcaption>Grade 11 week</figcaption></figure></div>
+  <div class="sch-row rv">
+    <figure class="photo glass"><picture><source media="(max-width:760px)" srcset="img/school-chemistry-s.jpg"><img src="img/school-chemistry.jpg" alt="Four school friends in lab coats and safety glasses at a chemistry practical" width="1116" height="1488" style="object-position:50% 40%" loading="lazy" decoding="async"></picture><figcaption class="cap">Chemistry practical</figcaption></figure>
+    <figure class="photo glass"><picture><source media="(max-width:760px)" srcset="img/school-grade11-s.jpg"><img src="img/school-grade11.jpg" alt="Four friends with a pool toy and a rubber duck outside, Grade 11 week" width="1000" height="999" style="object-position:50% 35%" loading="lazy" decoding="async"></picture><figcaption class="cap">Grade 11 week</figcaption></figure>
+  </div>
 </section>
 </div>
 
 <div class="wrap">
-<section id="reports">
+<section id="practicals" aria-labelledby="prac-h">
   <p class="eyebrow">Coursework</p>
-  <h2 class="rv" style="font-size:clamp(32px,5.4vw,68px)">Relevant Assignments<span class="d">&amp; Practical Laboratory Work</span></h2>
-  <p class="dim rv" style="max-width:62ch">Reports from assignments and laboratory practicals in my degree, written in LaTeX with my lab group. Hover over one, or tap it, to open it.</p>
-  <div class="reps"><article class="glass rep rv" tabindex="0" aria-expanded="false"><div class="rep-h"><span class="mono k">ENE 310</span><h3><span class="tp">Analogue Electronics</span><i>→</i>Active Filter Design</h3><span class="pl" aria-hidden="true"></span></div><div class="rep-b"><div class="rep-bi"><p>Multiple-feedback filter stages designed, simulated in LTspice and measured, with a Monte Carlo tolerance analysis.</p><div class="rep-s"><div><b>20.01 kHz</b><span>measured −3 dB cutoff</span></div><div><b>28.80 dB</b><span>measured passband gain</span></div><div><b>20.20 kHz</b><span>Monte Carlo mean cutoff</span></div></div><div class="rep-f n2 eq"><figure><picture><source media="(max-width:760px)" srcset="img/09-measured-magnitude-response-s.jpg"><img src="img/09-measured-magnitude-response.jpg" alt="Measured magnitude response" width="900" height="549" loading="lazy" decoding="async"></picture><figcaption>Measured magnitude response</figcaption></figure><figure><picture><source media="(max-width:760px)" srcset="img/10-monte-carlo-magnitude-response-s.jpg"><img src="img/10-monte-carlo-magnitude-response.jpg" alt="Monte Carlo magnitude response" width="1000" height="600" loading="lazy" decoding="async"></picture><figcaption>Monte Carlo magnitude response</figcaption></figure></div></div></div></article><article class="glass rep rv" tabindex="0" aria-expanded="false"><div class="rep-h"><span class="mono k">ELX 311</span><h3><span class="tp">Induction Motors</span><i>→</i>Equivalent Circuit</h3><span class="pl" aria-hidden="true"></span></div><div class="rep-b"><div class="rep-bi"><p>Equivalent-circuit parameters from DC, no-load and blocked-rotor tests, compared with load-test results.</p><div class="rep-f"><figure><picture><source media="(max-width:760px)" srcset="img/11-output-torque-against-slip-s.jpg"><img src="img/11-output-torque-against-slip.jpg" alt="Output torque against slip" width="1000" height="655" loading="lazy" decoding="async"></picture><figcaption>Output torque against slip: theoretical and practical</figcaption></figure></div></div></div></article><article class="glass rep rv" tabindex="0" aria-expanded="false"><div class="rep-h"><span class="mono k">EBB 320</span><h3><span class="tp">Control Systems</span><i>→</i>PID Controller Design</h3><span class="pl" aria-hidden="true"></span></div><div class="rep-b"><div class="rep-bi"><p>Root-locus and frequency-response designs, tested on the hardware.</p><div class="rep-s"><div><b>ζ = 0.591</b><span>G11 root-locus damping line</span></div><div><b>60 °C / 50 °C</b><span>G11 / G22 references</span></div></div><div class="rep-f"><figure><picture><source media="(max-width:760px)" srcset="img/12-temperature-tracking-and-control-signals-s.jpg"><img src="img/12-temperature-tracking-and-control-signals.jpg" alt="Temperature tracking and control signals" width="1000" height="652" loading="lazy" decoding="async"></picture><figcaption>Measured temperature tracking and control signals, root-locus design (60 °C / 50 °C)</figcaption></figure></div></div></div></article><article class="glass rep rv" tabindex="0" aria-expanded="false"><div class="rep-h"><span class="mono k">EKK 320</span><h3><span class="tp">Three-Phase Transformers</span><i>→</i>Transformer Bank</h3><span class="pl" aria-hidden="true"></span></div><div class="rep-b"><div class="rep-bi"><p>Y-Y, Y-Δ and Δ-Δ banks agreed within about 1% (theory vs simulation) and 5% (measured), secondary side.</p><div class="rep-s"><div><b>77.70 V</b><span>Y-Δ secondary, simulated (rms)</span></div><div><b>4.80 W → 4.29 W</b><span>Y-Δ per-phase power in → out, simulated</span></div></div><div class="rep-f"><figure><picture><source media="(max-width:760px)" srcset="img/13-annotated-lab-setup-s.jpg"><img src="img/13-annotated-lab-setup.jpg" alt="Annotated lab setup" width="1000" height="750" loading="lazy" decoding="async"></picture><figcaption>Lab setup for the transformer bank tests</figcaption></figure></div></div></div></article><article class="glass rep rv" tabindex="0" aria-expanded="false"><div class="rep-h"><span class="mono k">EDF 320</span><h3><span class="tp">DC-DC Converters</span><i>→</i>Buck and Boost Converters</h3><span class="pl" aria-hidden="true"></span></div><div class="rep-b"><div class="rep-bi"><p>Practical measurements at 5 kHz and 20 kHz: lower frequency gave higher efficiency at every buck duty ratio tested.</p><div class="rep-s"><div><b>73.57 → 86.65%</b><span>5 kHz, δ = 0.4 → 0.7</span></div><div><b>64.82 → 81.36%</b><span>20 kHz, δ = 0.4 → 0.7</span></div></div><div class="rep-f n3"><figure><picture><source media="(max-width:760px)" srcset="img/14-measured-waveforms-5-khz-s.jpg"><img src="img/14-measured-waveforms-5-khz.jpg" alt="Measured waveforms, 5 kHz" width="1000" height="705" loading="lazy" decoding="async"></picture><figcaption>Measured voltage and current, 5 kHz, δ = 0.6</figcaption></figure><figure><picture><source media="(max-width:760px)" srcset="img/15-measured-spectra-20-khz-s.jpg"><img src="img/15-measured-spectra-20-khz.jpg" alt="Measured spectra, 20 kHz" width="1000" height="705" loading="lazy" decoding="async"></picture><figcaption>Measured input spectra, 20 kHz, δ = 0.7</figcaption></figure><figure><picture><source media="(max-width:760px)" srcset="img/16-loss-and-efficiency-estimates-s.jpg"><img src="img/16-loss-and-efficiency-estimates.jpg" alt="Loss and efficiency estimates" width="910" height="641" loading="lazy" decoding="async"></picture><figcaption>Loss and efficiency estimates against duty setting</figcaption></figure></div></div></div></article></div>
+  <h2 class="rv" id="prac-h" style="font-size:clamp(32px,5.4vw,68px)">Relevant Assignments<span class="d">&amp; Practical Laboratory Work</span></h2>
+  <p class="lead rv">Reports from assignments and laboratory practicals in my degree, written in LaTeX with my lab group. Hover over one, or select it, to open it.</p>
+  <div class="reps">
+    <article class="glass rep rv">
+      <h3 class="sr-only">ENE 310: Analogue Electronics, Active Filter Design</h3>
+      <button class="rep-h" type="button" id="ene-h" aria-expanded="false" aria-controls="ene-b">
+        <span class="k" translate="no">ENE 310</span>
+        <span class="rep-t"><span class="tp">Analogue Electronics</span><i class="ar" aria-hidden="true">→</i><b>Active Filter Design</b></span>
+        <span class="pl" aria-hidden="true"></span>
+      </button>
+      <div class="rep-b" id="ene-b" role="region" aria-labelledby="ene-h"><div class="rep-bi">
+        <p>Multiple-feedback filter stages designed, simulated in LTspice and measured, with a Monte Carlo tolerance analysis.</p><dl class="rep-s"><div><dt>measured −3&nbsp;dB cutoff</dt><dd>20.01&nbsp;kHz</dd></div><div><dt>measured passband gain</dt><dd>28.80&nbsp;dB</dd></div><div><dt>Monte Carlo mean cutoff</dt><dd>20.20&nbsp;kHz</dd></div></dl><div class="rep-f two"><figure><picture><source media="(max-width:760px)" srcset="img/ene-measured-s.jpg"><img src="img/ene-measured.jpg" alt="Measured magnitude response of the filter" width="900" height="549" loading="lazy" decoding="async"></picture><figcaption>Measured magnitude response</figcaption></figure><figure><picture><source media="(max-width:760px)" srcset="img/ene-montecarlo-s.jpg"><img src="img/ene-montecarlo.jpg" alt="Monte Carlo magnitude response of the filter" width="1000" height="600" loading="lazy" decoding="async"></picture><figcaption>Monte Carlo magnitude response</figcaption></figure></div>
+      </div></div>
+    </article>
+    <article class="glass rep rv">
+      <h3 class="sr-only">ELX 311: Induction Motors, Equivalent Circuit</h3>
+      <button class="rep-h" type="button" id="elx-h" aria-expanded="false" aria-controls="elx-b">
+        <span class="k" translate="no">ELX 311</span>
+        <span class="rep-t"><span class="tp">Induction Motors</span><i class="ar" aria-hidden="true">→</i><b>Equivalent Circuit</b></span>
+        <span class="pl" aria-hidden="true"></span>
+      </button>
+      <div class="rep-b" id="elx-b" role="region" aria-labelledby="elx-h"><div class="rep-bi">
+        <p>Equivalent-circuit parameters from DC, no-load and blocked-rotor tests, compared with load-test results.</p><div class="rep-f"><figure><picture><source media="(max-width:760px)" srcset="img/elx-torque-s.jpg"><img src="img/elx-torque.jpg" alt="Output torque against slip, theoretical and practical" width="1000" height="655" loading="lazy" decoding="async"></picture><figcaption>Output torque against slip: theoretical and practical</figcaption></figure></div>
+      </div></div>
+    </article>
+    <article class="glass rep rv">
+      <h3 class="sr-only">EBB 320: Control Systems, PID Controller Design</h3>
+      <button class="rep-h" type="button" id="ebb-h" aria-expanded="false" aria-controls="ebb-b">
+        <span class="k" translate="no">EBB 320</span>
+        <span class="rep-t"><span class="tp">Control Systems</span><i class="ar" aria-hidden="true">→</i><b>PID Controller Design</b></span>
+        <span class="pl" aria-hidden="true"></span>
+      </button>
+      <div class="rep-b" id="ebb-b" role="region" aria-labelledby="ebb-h"><div class="rep-bi">
+        <p>Root-locus and frequency-response designs, tested on the hardware.</p><dl class="rep-s"><div><dt>G11 root-locus damping line</dt><dd>ζ&nbsp;=&nbsp;0.591</dd></div><div><dt>G11 / G22 references</dt><dd>60&nbsp;°C / 50&nbsp;°C</dd></div></dl><div class="rep-f"><figure><picture><source media="(max-width:760px)" srcset="img/ebb-pid-results-s.jpg"><img src="img/ebb-pid-results.jpg" alt="Temperature tracking and control signals for the G11 and G22 loops" width="1000" height="652" loading="lazy" decoding="async"></picture><figcaption>Measured temperature tracking and control signals, root-locus design (60&nbsp;°C / 50&nbsp;°C)</figcaption></figure></div><div class="rep-ph"><figure class="photo"><picture><source media="(max-width:760px)" srcset="img/ebb-setup-s.jpg"><img src="img/ebb-setup.jpg" alt="Laptop showing temperature and control-signal plots beside a breadboard circuit" width="1080" height="608" style="object-position:50% 50%" loading="lazy" decoding="async"></picture><figcaption class="cap">EBB 320 practical set-up</figcaption></figure><figure class="photo"><picture><source media="(max-width:760px)" srcset="img/ebb-lab-s.jpg"><img src="img/ebb-lab.jpg" alt="Carla, Clarise and Dominik at a lab bench with a laptop and breadboard" width="1080" height="608" style="object-position:50% 40%" loading="lazy" decoding="async"></picture><figcaption class="cap">EBB 320 practical · Carla, Clarise and Dominik</figcaption></figure></div><p class="source">Photos: @eeceup, University of Pretoria.</p>
+      </div></div>
+    </article>
+    <article class="glass rep rv">
+      <h3 class="sr-only">EKK 320: Three-Phase Transformers, Transformer Bank</h3>
+      <button class="rep-h" type="button" id="ekk-h" aria-expanded="false" aria-controls="ekk-b">
+        <span class="k" translate="no">EKK 320</span>
+        <span class="rep-t"><span class="tp">Three-Phase Transformers</span><i class="ar" aria-hidden="true">→</i><b>Transformer Bank</b></span>
+        <span class="pl" aria-hidden="true"></span>
+      </button>
+      <div class="rep-b" id="ekk-b" role="region" aria-labelledby="ekk-h"><div class="rep-bi">
+        <p>Y-Y, Y-Δ and Δ-Δ banks agreed within about 1% (theory vs simulation) and 5% (measured), secondary side.</p><dl class="rep-s"><div><dt>Y-Δ secondary, simulated (rms)</dt><dd>77.70&nbsp;V</dd></div><div><dt>Y-Δ per-phase power in → out, simulated</dt><dd>4.80&nbsp;W → 4.29&nbsp;W</dd></div></dl><div class="rep-f"><figure><picture><source media="(max-width:760px)" srcset="img/ekk-setup-s.jpg"><img src="img/ekk-setup.jpg" alt="Annotated lab setup with three transformers, a P&amp;T board and a resistor load" width="1000" height="750" loading="lazy" decoding="async"></picture><figcaption>Lab setup for the transformer bank tests</figcaption></figure></div>
+      </div></div>
+    </article>
+    <article class="glass rep rv">
+      <h3 class="sr-only">EDF 320: DC-DC Converters, Buck and Boost Converters</h3>
+      <button class="rep-h" type="button" id="edf-h" aria-expanded="false" aria-controls="edf-b">
+        <span class="k" translate="no">EDF 320</span>
+        <span class="rep-t"><span class="tp">DC-DC Converters</span><i class="ar" aria-hidden="true">→</i><b>Buck and Boost Converters</b></span>
+        <span class="pl" aria-hidden="true"></span>
+      </button>
+      <div class="rep-b" id="edf-b" role="region" aria-labelledby="edf-h"><div class="rep-bi">
+        <p>Practical measurements at 5&nbsp;kHz and 20&nbsp;kHz: lower frequency gave higher efficiency at every buck duty ratio tested.</p><dl class="rep-s"><div><dt>5&nbsp;kHz, δ&nbsp;=&nbsp;0.4 → 0.7</dt><dd>73.57 → 86.65%</dd></div><div><dt>20&nbsp;kHz, δ&nbsp;=&nbsp;0.4 → 0.7</dt><dd>64.82 → 81.36%</dd></div></dl><div class="rep-f three"><figure><picture><source media="(max-width:760px)" srcset="img/edf-waveforms-s.jpg"><img src="img/edf-waveforms.jpg" alt="Measured voltage and current waveforms at 5 kHz" width="1000" height="705" loading="lazy" decoding="async"></picture><figcaption>Measured voltage and current, 5&nbsp;kHz, δ&nbsp;=&nbsp;0.6</figcaption></figure><figure><picture><source media="(max-width:760px)" srcset="img/edf-spectra-s.jpg"><img src="img/edf-spectra.jpg" alt="Measured input spectra at 20 kHz" width="1000" height="705" loading="lazy" decoding="async"></picture><figcaption>Measured input spectra, 20&nbsp;kHz, δ&nbsp;=&nbsp;0.7</figcaption></figure><figure><picture><source media="(max-width:760px)" srcset="img/edf-efficiency-s.jpg"><img src="img/edf-efficiency.jpg" alt="Loss and efficiency estimates against duty setting" width="910" height="641" loading="lazy" decoding="async"></picture><figcaption>Loss and efficiency estimates against duty setting</figcaption></figure></div>
+      </div></div>
+    </article>
+  </div>
 </section>
 </div>
 
 <div class="wrap">
-<section id="olifante">
+<section id="olifante" aria-labelledby="oli-h">
   <p class="eyebrow">Team collaboration</p>
-  <div class="olihead"><h2 class="rv glowh">Pienk BCC<span class="d">Olifante</span></h2><img class="oli-logo" src="img/olifante-logo.png" decoding="async" alt="Pienk BCC Olifante logo"></div>
+  <div class="olihead"><h2 class="rv" id="oli-h" translate="no">Pienk BCC<span class="d">Olifante</span></h2><img class="oli-logo" src="img/olifante-logo.png" alt="Pienk BCC Olifante logo" width="520" height="321" decoding="async"></div>
   <div class="oli rv">
-    <figure class="oli-ph glass"><picture><source media="(max-width:760px)" srcset="img/17-members-of-the-pienk-bcc-olifante-at-a-r-s.jpg"><img src="img/17-members-of-the-pienk-bcc-olifante-at-a-r.jpg" alt="Members of the Pienk BCC Olifante at a restaurant after an exam" loading="lazy" decoding="async"></picture><figcaption>After an exam</figcaption></figure>
-    <div class="oli-tx"><p class="dim">Pienk BCC Olifante is a friend group of electrical engineering students at the University of Pretoria. Charl Marais and Dirk-David Krause started the group on 14 February 2024, Ulrich Snyman joined about two weeks later, and Jonathan Oliver joined on 4 March 2025.</p>
-    <p class="dim">The group studies and builds together, and puts good marks first. It is where the shared projects start, beginning with the EIR210 DC motor in May 2025. The PBCCO-O1000 for EPR320 is my own project; I am its sole author, designer and systems engineer.</p>
+    <figure class="photo glass oli-ph"><picture><source media="(max-width:760px)" srcset="img/olifante-exam-s.jpg"><img src="img/olifante-exam.jpg" alt="Members of Pienk BCC Olifante at a restaurant after an exam" width="900" height="1200" loading="lazy" decoding="async"></picture><figcaption class="cap">After an exam</figcaption></figure>
+    <div class="oli-tx"><p class="dim">Pienk BCC Olifante is a friend group of electrical engineering students at the University of Pretoria. Charl Marais and Dirk-David Krause started the group on 14 February&nbsp;2024, Ulrich Snyman joined about two weeks later, and Jonathan Oliver joined on 4 March&nbsp;2025.</p>
+    <p class="dim">The group studies and builds together, and puts good marks first. It is where the shared projects start, beginning with the EIR210 DC motor in May&nbsp;2025. The <span translate="no">PBCCO-O1000</span> for EPR320 is my own project; I am its sole author, designer and systems engineer.</p></div>
   </div>
+  <div class="glass tl-card rv">
+    <div class="tl-scroll" tabindex="0" role="group" aria-label="Group timeline, scrolls sideways on small screens">
+      <div class="tl" aria-hidden="true">
+        <div class="axis"></div>
+        <span class="yr first" style="left:0%">Feb 2024</span><span class="yr" style="left:36.2%">Jan 2025</span><span class="yr" style="left:75.9%">Jan 2026</span><span class="yr" style="left:97%">Oct 2026</span>
+        <div class="join up" style="left:0.4%;--h:70px"><span class="dot"></span><span class="stem"></span><div class="lab"><em>14 Feb 2024</em><b>Charl Marais &amp; Dirk-David Krause</b><span>Started the group.</span></div></div>
+        <div class="join dn" style="left:2.6%;--h:46px"><span class="dot"></span><span class="stem"></span><div class="lab"><em>≈ end Feb 2024</em><b>Ulrich Snyman</b><span>Joined about two weeks later.</span></div></div>
+        <div class="join up" style="left:39.7%;--h:70px"><span class="dot"></span><span class="stem"></span><div class="lab"><em>4 Mar 2025</em><b>Jonathan Oliver</b><span>Joined the group.</span></div></div>
+        <div class="lane" style="left:46.9%;width:3.1%;top:236px;padding:0"></div>
+        <span class="ms" style="left:46.9%"></span><span class="ms" style="left:50%"></span>
+        <span class="lbl-out" style="left:46%;top:241px;transform:translateX(-100%)">EIR210 DC motor · May 2025</span>
+        <div class="lane open" style="left:84%;right:0;top:296px">EPR320</div>
+        <span class="ms" style="left:84%;top:309px"></span>
+        <span class="lbl-out" style="right:0;top:332px">PBCCO-O1000 · sole designer</span>
+        <span class="lbl-out" style="left:0;top:364px">◇ project milestone &nbsp; ● member joined &nbsp; bars show project duration</span>
+      </div>
+    </div>
+    <ol class="sr-only">
+      <li>14 February 2024: Charl Marais and Dirk-David Krause started the group.</li>
+      <li>About the end of February 2024: Ulrich Snyman joined.</li>
+      <li>4 March 2025: Jonathan Oliver joined.</li>
+      <li>May 2025: EIR210 DC motor project.</li>
+      <li>EPR320 project, ongoing. PBCCO-O1000, sole designer.</li>
+    </ol>
   </div>
-  <div class="glass" style="padding:20px 20px 12px"><div class="tl-scroll"><div class="tl" role="img" aria-label="Timeline from February 2024 to now showing when each member joined and when projects ran">
-    <div class="axis"></div>
-    <span class="yr" style="left:0%">Feb 2024</span><span class="yr" style="left:36.2%">Jan 2025</span><span class="yr" style="left:75.9%">Jan 2026</span><span class="yr" style="left:97%">Oct 2026</span>
-    <div class="join up" style="left:0.4%;--h:70px"><span class="dot"></span><span class="stem"></span><div class="lab"><em>14 Feb 2024</em><b>Charl Marais &amp; Dirk-David Krause</b><span>Started the group.</span></div></div>
-    <div class="join dn" style="left:2.6%;--h:46px"><span class="dot"></span><span class="stem"></span><div class="lab"><em>≈ end Feb 2024</em><b>Ulrich Snyman</b><span>Joined about two weeks later.</span></div></div>
-    <div class="join up" style="left:39.7%;--h:70px"><span class="dot"></span><span class="stem"></span><div class="lab"><em>4 Mar 2025</em><b>Jonathan Oliver</b><span>Joined the group.</span></div></div>
-    <div class="lane" style="left:46.9%;width:3.1%;top:236px;padding:0"></div>
-    <span class="ms" style="left:46.9%;top:249px"></span><span class="ms" style="left:50%;top:249px"></span>
-    <span class="lbl-out" style="left:46%;top:241px;transform:translateX(-100%)">EIR210 DC motor · May 2025</span>
-    <div class="lane open" style="left:84%;right:0;top:296px">EPR320</div>
-    <span class="ms" style="left:84%;top:309px"></span>
-    <span class="lbl-out" style="right:0;top:332px;">PBCCO-O1000 · sole designer</span>
-    <span class="lbl-out" style="left:0;top:364px;font-size:11px">◇ project milestone &nbsp; ● member joined &nbsp; bars show project duration</span>
-  </div></div></div>
 </section>
 </div>
 
 <div class="band-light" id="karate"><div class="wrap">
-<section>
+<section aria-labelledby="karate-h">
   <p class="eyebrow">Outside engineering</p>
-  <h2 class="rv">Karate<span class="d">Shorin-Ryu</span></h2>
-  <p class="dim rv" style="max-width:62ch">I have trained Shorin-Ryu karate with the Villieria Tigers in Pretoria since August 2015. I compete in kata and kumite and train with weapons, with gold and silver medals at national level.</p>
+  <h2 class="rv" id="karate-h">Karate<span class="d">Shorin-Ryu</span></h2>
+  <p class="lead rv">I have trained Shorin-Ryu karate with the Villieria Tigers in Pretoria since August&nbsp;2015. I compete in kata and kumite and train with weapons, with gold and silver medals at national level.</p>
   <div class="kar rv">
-    <figure class="f1"><picture><source media="(max-width:760px)" srcset="img/18-charl-performing-kata-in-a-black-belt-at-s.jpg"><img src="img/18-charl-performing-kata-in-a-black-belt-at.jpg" alt="Charl performing kata in a black belt at the Shorin-Ryu national championship, 6 October 2023" loading="lazy" decoding="async"></picture><figcaption>Nationals · 6 Oct 2023</figcaption></figure>
-    <figure class="f2"><picture><source media="(max-width:760px)" srcset="img/19-charl-performing-a-weapons-kata-with-cro-s.jpg"><img src="img/19-charl-performing-a-weapons-kata-with-cro.jpg" alt="Charl performing a weapons kata with crossed kama" loading="lazy" decoding="async"></picture><figcaption>Weapons kata</figcaption></figure>
-    <figure class="f4" style="grid-column:span 6;aspect-ratio:16/8"><picture><source media="(max-width:760px)" srcset="img/20-shorin-ryu-shorinkan-south-africa-team-w-s.jpg"><img src="img/20-shorin-ryu-shorinkan-south-africa-team-w.jpg" alt="Shorin-Ryu Shorinkan South Africa team with trophies and the championship sword" style="object-position:50% 40%" loading="lazy" decoding="async"></picture><figcaption>Shorin-Ryu Shorinkan South Africa team</figcaption></figure>
-    <figure class="f5"><picture><source media="(max-width:760px)" srcset="img/21-charl-with-two-teammates-and-an-official-s.jpg"><img src="img/21-charl-with-two-teammates-and-an-official.jpg" alt="Charl with two teammates and an official holding a karate trophy" style="object-position:50% 30%" loading="lazy" decoding="async"></picture><figcaption>Trophy presentation</figcaption></figure><figure class="f5"><picture><source media="(max-width:760px)" srcset="img/22-charl-on-the-top-step-of-a-medal-podium--s.jpg"><img src="img/22-charl-on-the-top-step-of-a-medal-podium-.jpg" alt="Charl on the top step of a medal podium at the SASKA tournament, 2022, in front of a Shotokan banner" style="object-position:50% 30%" loading="lazy" decoding="async"></picture><figcaption>SASKA tournament · 2022 · Gold</figcaption></figure><figure class="f5"><picture><source media="(max-width:760px)" srcset="img/23-charl-performing-kata-in-a-black-belt-s.jpg"><img src="img/23-charl-performing-kata-in-a-black-belt.jpg" alt="Charl performing kata in a black belt" style="object-position:50% 20%" loading="lazy" decoding="async"></picture><figcaption>Kata</figcaption></figure>
-    <figure class="f5"><picture><source media="(max-width:760px)" srcset="img/24-charl-holding-two-rank-certificates-with-s.jpg"><img src="img/24-charl-holding-two-rank-certificates-with.jpg" alt="Charl holding two rank certificates with two instructors" style="object-position:50% 30%" loading="lazy" decoding="async"></picture><figcaption>Rank certificates</figcaption></figure>
-    <figure class="f7"><picture><source media="(max-width:760px)" srcset="img/25-dojo-members-in-a-group-photo-holding-ra-s.jpg"><img src="img/25-dojo-members-in-a-group-photo-holding-ra.jpg" alt="Dojo members in a group photo holding rank certificates" style="object-position:50% 40%" loading="lazy" decoding="async"></picture><figcaption>Dojo group with rank certificates</figcaption></figure>
+    <figure class="photo g-a"><picture><source media="(max-width:760px)" srcset="img/karate-nationals-s.jpg"><img src="img/karate-nationals.jpg" alt="Charl performing kata in a black belt at the Shorin-Ryu national championship, 6 October 2023" width="1100" height="1243" loading="lazy" decoding="async"></picture><figcaption class="cap">Nationals · 6 Oct 2023</figcaption></figure>
+    <figure class="photo g-b"><picture><source media="(max-width:760px)" srcset="img/karate-weapons-s.jpg"><img src="img/karate-weapons.jpg" alt="Charl performing a weapons kata with crossed kama" width="1000" height="872" loading="lazy" decoding="async"></picture><figcaption class="cap">Weapons kata</figcaption></figure>
+    <figure class="photo g-wide"><picture><source media="(max-width:760px)" srcset="img/karate-team-s.jpg"><img src="img/karate-team.jpg" alt="Shorin-Ryu Shorinkan South Africa team with trophies and the championship sword" width="1000" height="1000" style="object-position:50% 40%" loading="lazy" decoding="async"></picture><figcaption class="cap">Shorin-Ryu Shorinkan South Africa team</figcaption></figure>
+    <figure class="photo g-sq"><picture><source media="(max-width:760px)" srcset="img/karate-trophy-s.jpg"><img src="img/karate-trophy.jpg" alt="Charl with two teammates and an official holding a karate trophy" width="1000" height="1000" style="object-position:50% 30%" loading="lazy" decoding="async"></picture><figcaption class="cap">Trophy presentation</figcaption></figure>
+    <figure class="photo g-sq"><picture><source media="(max-width:760px)" srcset="img/karate-podium-s.jpg"><img src="img/karate-podium.jpg" alt="Charl on the top step of a medal podium at the SASKA tournament, 2022, in front of a Shotokan banner" width="957" height="957" style="object-position:50% 30%" loading="lazy" decoding="async"></picture><figcaption class="cap">SASKA tournament · 2022 · Gold</figcaption></figure>
+    <figure class="photo g-sq"><picture><source media="(max-width:760px)" srcset="img/karate-kata-s.jpg"><img src="img/karate-kata.jpg" alt="Charl performing kata in a black belt" width="1000" height="1000" style="object-position:50% 20%" loading="lazy" decoding="async"></picture><figcaption class="cap">Kata</figcaption></figure>
+    <figure class="photo g-sq"><picture><source media="(max-width:760px)" srcset="img/karate-certificates-s.jpg"><img src="img/karate-certificates.jpg" alt="Charl holding two rank certificates with two instructors" width="1000" height="1000" style="object-position:50% 30%" loading="lazy" decoding="async"></picture><figcaption class="cap">Rank certificates</figcaption></figure>
+    <figure class="photo g-wide"><picture><source media="(max-width:760px)" srcset="img/karate-dojo-s.jpg"><img src="img/karate-dojo.jpg" alt="Dojo members in a group photo holding rank certificates" width="1400" height="1050" style="object-position:50% 40%" loading="lazy" decoding="async"></picture><figcaption class="cap">Dojo group with rank certificates</figcaption></figure>
   </div>
   <div class="dojo rv">
-    <div class="glass"><span class="mono k">Dojo</span><h3>Villieria Tigers</h3><p>Shorin-Ryu Shorinkan karate dojo in Villieria, Pretoria. It opened in 1970, and chief instructor Kyoshi Riaan Coetzee (7th Dan) has led it since 1991. It also teaches Okinawan kobudo.</p></div>
-    <div class="glass"><span class="mono k">Style</span><h3>Shorin-Ryu</h3><p>An Okinawan karate style. Shorin-Ryu Shorinkan came to South Africa on 15 January 1994, and the dojo traces its lineage through Shugoro and Minoru Nakazato.</p></div>
-    <div class="glass"><span class="mono k">Dojo motto</span><h3>No retreat, no surrender</h3><p>The motto on the Tigers’ website, kept through the dojo’s changes of location and instructors.</p></div>
+    <div class="glass"><span class="k">Dojo</span><h3>Villieria Tigers</h3><p>Shorin-Ryu Shorinkan karate dojo in Villieria, Pretoria. It opened in 1970, and chief instructor Kyoshi Riaan Coetzee (7th&nbsp;Dan) has led it since 1991. It also teaches Okinawan kobudo.</p></div>
+    <div class="glass"><span class="k">Style</span><h3>Shorin-Ryu</h3><p>An Okinawan karate style. Shorin-Ryu Shorinkan came to South Africa on 15 January&nbsp;1994, and the dojo traces its lineage through Shugoro and Minoru Nakazato.</p></div>
+    <div class="glass"><span class="k">Dojo motto</span><h3>No retreat, no surrender</h3><p>The motto on the Tigers’ website, kept through the dojo’s changes of location and instructors.</p></div>
   </div>
-  <p class="mono rv" style="font-size:12px;color:var(--fg-ink-dim);margin:14px 0 0">Source: shorinryu-tigers.co.za</p>
-  <div class="medals">
-    <div class="glass"><b>Gold &amp; silver</b><span>Shorin-Ryu National Championship, 2017 – 2023</span></div>
-    <div class="glass"><b>Gold</b><span>SASKA Shotokan National Championship, 2023</span></div>
-    <div class="glass"><b>Silver</b><span>WUKF National Championship, 2024</span></div>
-  </div>
+  <p class="source rv">Source: shorinryu-tigers.co.za</p>
+  <ul class="medals">
+    <li class="glass"><b>Gold &amp; silver</b><span>Shorin-Ryu National Championship, 2017 – 2023</span></li>
+    <li class="glass"><b>Gold</b><span>SASKA Shotokan National Championship, 2023</span></li>
+    <li class="glass"><b>Silver</b><span>WUKF National Championship, 2024</span></li>
+  </ul>
 </section>
 </div></div>
 
 <div class="wrap">
-<section id="contact" class="contact">
-  <div class="ct-g"><div><p class="eyebrow">Contact</p>
-  <h2 class="rv" style="font-size:clamp(44px,8vw,104px)">Get in<span class="d">touch</span></h2>
-  <p class="dim rv">For internship or graduate opportunities, or to work together, email me or message me on LinkedIn.</p>
-  <div class="mail rv"><code id="addr">cmarais.work@gmail.com</code><button class="btn" id="copy" type="button">Copy address</button></div>
-  <div class="cta" style="animation:none"><a class="btn primary" href="mailto:cmarais.work@gmail.com">Email me</a><a class="btn" href="https://www.linkedin.com/in/charl-marais-184646199" target="_blank" rel="noopener">LinkedIn ↗</a></div>
-  </div><div class="ct-ph rv"><figure class="glass"><picture><source media="(max-width:760px)" srcset="img/26-charl-leaning-against-a-brick-wall-in-a--s.jpg"><img src="img/26-charl-leaning-against-a-brick-wall-in-a-.jpg" alt="Charl leaning against a brick wall in a denim jacket" loading="lazy" decoding="async"></picture></figure><figure class="glass"><picture><source media="(max-width:760px)" srcset="img/27-charl-sitting-on-metal-stairs-in-a-denim-s.jpg"><img src="img/27-charl-sitting-on-metal-stairs-in-a-denim.jpg" alt="Charl sitting on metal stairs in a denim jacket" style="object-position:50% 30%" loading="lazy" decoding="async"></picture></figure></div></div>
-  <footer><span>© 2026 Charl Marais</span><span>Pretoria, South Africa</span></footer>
+<section id="contact" aria-labelledby="contact-h">
+  <div class="ct">
+    <div>
+      <p class="eyebrow">Contact</p>
+      <h2 class="rv" id="contact-h">Get in<span class="d">Touch</span></h2>
+      <p class="dim rv">To talk engineering or collaborate on a project, email me or message me on LinkedIn.</p>
+      <div class="mail rv"><code id="addr" translate="no">cmarais.work@gmail.com</code><button class="btn" id="copy" type="button">Copy Address</button><span id="copy-status" class="sr-only" role="status" aria-live="polite"></span></div>
+      <div class="cta"><a class="btn primary" href="mailto:cmarais.work@gmail.com">Email Me</a><a class="btn" href="https://www.linkedin.com/in/charl-marais-184646199" target="_blank" rel="noopener">LinkedIn <span aria-hidden="true">↗</span><span class="sr-only">(opens in a new tab)</span></a></div>
+    </div>
+    <div class="ct-ph rv">
+      <figure class="photo glass"><picture><source media="(max-width:760px)" srcset="img/portrait-wall-s.jpg"><img src="img/portrait-wall.jpg" alt="Charl leaning against a brick wall in a denim jacket" width="900" height="900" loading="lazy" decoding="async"></picture></figure>
+      <figure class="photo glass"><picture><source media="(max-width:760px)" srcset="img/portrait-stairs-s.jpg"><img src="img/portrait-stairs.jpg" alt="Charl sitting on metal stairs in a denim jacket" width="900" height="899" loading="lazy" decoding="async"></picture></figure>
+    </div>
+  </div>
 </section>
 </div>
+</main>
 
-<script>
-(function(){
-  var els=document.querySelectorAll('.rv');
-  if('IntersectionObserver' in window){
-    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.08});
-    els.forEach(function(el){io.observe(el)});
-  } else els.forEach(function(el){el.classList.add('in')});
-  var secs=['about','projects','education','school','reports','olifante','karate','contact'].map(function(i){return document.getElementById(i)}).filter(Boolean);
-  var la=document.querySelectorAll('.links a');
-  function act(){var y=scrollY+140,cur='';secs.forEach(function(s){if(s.offsetTop<=y)cur=s.id});la.forEach(function(a){a.classList.toggle('on',a.getAttribute('href')==='#'+cur)})}
-  var tk=false;addEventListener('scroll',function(){if(!tk){tk=true;requestAnimationFrame(function(){tk=false;act()})}},{passive:true});act();
-  var b=document.getElementById('copy');
-  b.addEventListener('click',function(){
-    var t=document.getElementById('addr').textContent;
-    function done(){b.textContent='Copied';setTimeout(function(){b.textContent='Copy address'},1800)}
-    function sel(){var r=document.createRange();r.selectNodeContents(document.getElementById('addr'));var s=getSelection();s.removeAllRanges();s.addRange(r);b.textContent='Press Ctrl+C'}
-    try{navigator.clipboard.writeText(t).then(done,sel)}catch(e){sel()}
-  });
-})();
-</script>
-<script>document.querySelectorAll('.rep').forEach(function(r){r.addEventListener('click',function(){if(matchMedia('(hover:none)').matches){r.classList.toggle('open');r.setAttribute('aria-expanded',r.classList.contains('open'))}})});</script>
+<footer class="site-footer"><span translate="no">© 2026 Charl Marais</span><span>Pretoria, South Africa</span></footer>
+<script src="js/site.js" defer></script>
 </body>
 </html>
