@@ -105,7 +105,7 @@ HERO = f'''
     <div class="tile t-red"><p>Under contract until 2030</p></div>
     <div class="tile glass t-now"><p>Engineer in Training at Cape Gate, <em>Dec&nbsp;2025 – present</em></p></div>
     <div class="tile glass t-n"><b>80.0%</b><span>cumulative GPA, B.Eng</span></div>
-    <div class="tile glass t-n"><b>2024</b><span>Dean’s Merit List</span></div>
+    <div class="tile glass t-n"><b>2×</b><span>Dean’s Merit List</span></div>
     <div class="tile glass t-n"><b>84.42%</b><span>NSC final aggregate</span></div>
     <div class="tile glass t-n"><b>2015</b><span>karate since Aug&nbsp;2015</span></div>
     <div class="tile glass t-cta"><p>Contact for work or collaboration</p>
@@ -194,7 +194,8 @@ EDU = '''
   <ul class="skills rv"><li>C++</li><li>Python</li><li>MATLAB</li><li>LTspice</li><li>SolidWorks</li><li>LaTeX</li><li>VHDL</li><li>Assembly</li><li>MS Office</li><li>Robotics / Mechatronics</li><li>MV/LV maintenance</li></ul>
   <div class="cols rv">
     <div><h3>Achievements</h3><ul>
-      <li>Dean’s Merit List, Faculty of Engineering, 2024</li>
+      <li>Dean’s Merit List, Faculty of Engineering, 2024, and again for second-year marks</li>
+      <li>Bronze award, two years in a row, placing in the top 3 of electrical engineering students in my year group</li>
       <li>Golden Key Award nominee, top 15% in Electrical Engineering</li>
       <li>Gold &amp; silver medallist, Shorin-Ryu Karate National Championship, 2017 – 2023</li>
       <li>Silver medallist, WUKF National Karate Championship, 2024</li>
@@ -243,8 +244,7 @@ REPS = "".join([
         + '<div class="rep-f">' + figure("ebb-pid-results", "Temperature tracking and control signals for the G11 and G22 loops", "Measured temperature tracking and control signals, root-locus design (60&nbsp;°C / 50&nbsp;°C)") + "</div>"
         + '<div class="rep-ph">'
         + photo("ebb-setup", "Laptop showing temperature and control-signal plots beside a breadboard circuit", "EBB 320 practical set-up", pos="50% 50%")
-        + photo("ebb-lab", "Carla, Clarise and Dominik at a lab bench with a laptop and breadboard", "EBB 320 practical · Carla, Clarise and Dominik", pos="50% 40%")
-        + '</div><p class="source">Photos: @eeceup, University of Pretoria.</p>'),
+        + '</div><p class="source">Photo: @eeceup, University of Pretoria.</p>'),
     rep("ekk", "EKK 320", "Three-Phase Transformers", "Transformer Bank",
         "Y-Y, Y-Δ and Δ-Δ banks agreed within about 1% (theory vs simulation) and 5% (measured), secondary side.",
         stats([("77.70&nbsp;V", "Y-Δ secondary, simulated (rms)"), ("4.80&nbsp;W → 4.29&nbsp;W", "Y-Δ per-phase power in → out, simulated")])
@@ -279,6 +279,7 @@ OLIFANTE = f'''
     <div class="oli-tx"><p class="dim">Pienk BCC Olifante is a friend group of electrical engineering students at the University of Pretoria. Charl Marais and Dirk-David Krause started the group on 14 February&nbsp;2024, Ulrich Snyman joined about two weeks later, and Jonathan Oliver joined on 4 March&nbsp;2025.</p>
     <p class="dim">The group studies and builds together, and puts good marks first. It is where the shared projects start, beginning with the EIR210 DC motor in May&nbsp;2025. The <span translate="no">PBCCO-O1000</span> for EPR320 is my own project; I am its sole author, designer and systems engineer.</p></div>
   </div>
+  <figure class="glass oli-team rv">{pic("ebb-lab", "Charl and his EBB 320 team at a lab bench with a laptop and breadboard", "50% 40%")}<figcaption class="cap">EBB 320 team practical · Charl, Carla, Clarise and Dominik<br><span class="source">Photo: @eeceup, University of Pretoria</span></figcaption></figure>
   <div class="glass tl-card rv">
     <div class="tl-scroll" tabindex="0" role="group" aria-label="Group timeline, scrolls sideways on small screens">
       <div class="tl" aria-hidden="true">
