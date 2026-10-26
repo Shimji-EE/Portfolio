@@ -258,7 +258,7 @@ REPS = "".join([
     rep("mia", "MIA 320", "Engineers Without Borders, Ladywood", "Anaerobic Digester Design",
         "Group 35 design for the Engineering for People Design Challenge 2026: a large-scale anaerobic digester that produces electricity from food waste with a biogas CHP engine, with organic fertiliser as a by-product, plus energy-efficiency retrofits for community buildings.",
         stats([("1701&nbsp;kWh/day", "CHP electrical output"), ("2187&nbsp;kWh/day", "CHP thermal output, heating the digester at 38&nbsp;°C")])
-        + '<div class="rep-f">' + figure("mia-digester-render", "Three renders of the anaerobic digester: assembled, with the shell hidden to show the heating coil, and front elevation", "Digester renders: CAD model by Abusi Abolarin, rendered by me in Autodesk Fusion")
+        + '<div class="rep-f">' + figure("mia-digester-render", "Three renders of the anaerobic digester: assembled, with the shell hidden to show the heating coil, and front elevation", "Digester renders: CAD model designed by Abusi Abolarin, rendered by me in Autodesk Fusion")
         + figure("mia-system-flow", "Flow chart of the anaerobic digester system: waste crusher, digester, biogas engine, heat recovery and electricity to the grid", "System flow chart: biogas to engine, recovered heat back to the digester") + "</div>"),
 ])
 
