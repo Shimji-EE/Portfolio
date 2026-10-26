@@ -105,7 +105,7 @@ HERO = f'''
     <div class="tile t-red"><p>Under contract until 2030</p></div>
     <div class="tile glass t-now"><p>Engineer in Training at Cape Gate, <em>Dec&nbsp;2025 – present</em></p></div>
     <div class="tile glass t-n"><b>80.0%</b><span>cumulative GPA, B.Eng</span></div>
-    <div class="tile glass t-n"><b>2024</b><span>Dean’s Merit List</span></div>
+    <div class="tile glass t-n"><b>2×</b><span>Dean’s Merit List</span></div>
     <div class="tile glass t-n"><b>84.42%</b><span>NSC final aggregate</span></div>
     <div class="tile glass t-n"><b>2015</b><span>karate since Aug&nbsp;2015</span></div>
     <div class="tile glass t-cta"><p>Contact for work or collaboration</p>
@@ -194,7 +194,8 @@ EDU = '''
   <ul class="skills rv"><li>C++</li><li>Python</li><li>MATLAB</li><li>LTspice</li><li>SolidWorks</li><li>LaTeX</li><li>VHDL</li><li>Assembly</li><li>MS Office</li><li>Robotics / Mechatronics</li><li>MV/LV maintenance</li></ul>
   <div class="cols rv">
     <div><h3>Achievements</h3><ul>
-      <li>Dean’s Merit List, Faculty of Engineering, 2024</li>
+      <li>Dean’s Merit List, Faculty of Engineering, 2024, and again for second-year marks</li>
+      <li>Bronze award, two years in a row</li>
       <li>Golden Key Award nominee, top 15% in Electrical Engineering</li>
       <li>Gold &amp; silver medallist, Shorin-Ryu Karate National Championship, 2017 – 2023</li>
       <li>Silver medallist, WUKF National Karate Championship, 2024</li>
