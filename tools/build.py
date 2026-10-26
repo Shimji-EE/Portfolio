@@ -201,7 +201,7 @@ EDU = '''
       <li>Silver medallist, WUKF National Karate Championship, 2024</li>
       <li>Gold medallist, SASKA Shotokan Karate National Championship, 2023</li></ul></div>
     <div><h3>Coursework</h3><ul>
-      <li>Analogue Electronics (ongoing)</li><li>Electrical Machines (ongoing)</li><li>Microprocessors (ongoing)</li><li>Electromagnetism (ongoing)</li><li>Linear Systems &amp; Signals</li><li>Digital Systems</li><li>Computer Programming &amp; Simulations</li></ul></div>
+      <li>Control Systems (ongoing)</li><li>Power Electronics (ongoing)</li><li>Power System Components (ongoing)</li><li>Electrical Engineering Design, EPR320 (ongoing)</li><li>Engineering Activity &amp; Group Work (ongoing)</li><li>DSP Programming (ongoing)</li><li>Analogue Electronics</li><li>Electrical Machines</li><li>Microprocessors</li><li>Electromagnetism</li><li>Engineering Management</li><li>Linear Systems &amp; Signals</li><li>Digital Systems</li><li>Computer Programming &amp; Simulations</li></ul></div>
   </div>
 </section>
 </div></div>
@@ -255,6 +255,11 @@ REPS = "".join([
         + '<div class="rep-f three">' + figure("edf-waveforms", "Measured voltage and current waveforms at 5 kHz", "Measured voltage and current, 5&nbsp;kHz, δ&nbsp;=&nbsp;0.6")
         + figure("edf-spectra", "Measured input spectra at 20 kHz", "Measured input spectra, 20&nbsp;kHz, δ&nbsp;=&nbsp;0.7")
         + figure("edf-efficiency", "Loss and efficiency estimates against duty setting", "Loss and efficiency estimates against duty setting") + "</div>"),
+    rep("mia", "MIA 320", "Engineers Without Borders, Ladywood", "Anaerobic Digester Design",
+        "Group 35 design for the Engineering for People Design Challenge 2026: a large-scale anaerobic digester that produces electricity from food waste with a biogas CHP engine, with organic fertiliser as a by-product, plus energy-efficiency retrofits for community buildings.",
+        stats([("1701&nbsp;kWh/day", "CHP electrical output"), ("2187&nbsp;kWh/day", "CHP thermal output, heating the digester at 38&nbsp;°C")])
+        + '<div class="rep-f">' + figure("mia-digester-render", "Three renders of the anaerobic digester: assembled, with the shell hidden to show the heating coil, and front elevation", "Digester renders: CAD model by Abusi Abolarin, rendered by me in Autodesk Fusion")
+        + figure("mia-system-flow", "Flow chart of the anaerobic digester system: waste crusher, digester, biogas engine, heat recovery and electricity to the grid", "System flow chart: biogas to engine, recovered heat back to the digester") + "</div>"),
 ])
 
 PRACTICALS = f'''
