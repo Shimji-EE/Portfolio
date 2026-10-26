@@ -440,6 +440,8 @@ h2 .d { display: block; color: var(--heading-2); }
 }
 
 /* team photo in the Olifante section */
-.oli-team { position: relative; margin: 0 0 20px; overflow: hidden; border-radius: var(--radius); }
-.oli-team img { width: 100%; height: auto; object-fit: cover; display: block; }
-.oli-team .cap { position: absolute; left: 12px; bottom: 12px; right: 12px; }
+.oli-team { margin: 0 0 20px; overflow: hidden; border-radius: var(--radius); }
+.oli-team picture { display: block; }
+.oli-team img { width: 100%; height: auto; display: block; }
+.oli-team figcaption { padding: 14px 18px; font: 500 12px/1.5 var(--mono); letter-spacing: 0.06em; color: var(--fg-soft); }
+.oli-team .source { color: var(--fg-dim); }
