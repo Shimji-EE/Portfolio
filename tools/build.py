@@ -102,7 +102,7 @@ HERO = f'''
       <p>Interests: control systems, power generation and distribution, robotics and automation.</p>
       <div class="tags"><span class="tag hot">KiCad</span><span class="tag">STM32</span><span class="tag">C++</span><span class="tag">Python</span><span class="tag">MATLAB</span></div>
     </div>
-    <div class="tile t-red"><p>Open to internship &amp; graduate opportunities</p></div>
+    <div class="tile t-red"><p>Under contract until 2030</p></div>
     <div class="tile glass t-now"><p>Engineer in Training at Cape Gate, <em>Dec&nbsp;2025 – present</em></p></div>
     <div class="tile glass t-n"><b>80.0%</b><span>cumulative GPA, B.Eng</span></div>
     <div class="tile glass t-n"><b>2024</b><span>Dean’s Merit List</span></div>
@@ -346,7 +346,7 @@ CONTACT = f'''
     <div>
       <p class="eyebrow">Contact</p>
       <h2 class="rv" id="contact-h">Get in<span class="d">Touch</span></h2>
-      <p class="dim rv">For internship or graduate opportunities, or to work together, email me or message me on LinkedIn.</p>
+      <p class="dim rv">To talk engineering or collaborate on a project, email me or message me on LinkedIn.</p>
       <div class="mail rv"><code id="addr" translate="no">{EMAIL}</code><button class="btn" id="copy" type="button">Copy Address</button><span id="copy-status" class="sr-only" role="status" aria-live="polite"></span></div>
       <div class="cta"><a class="btn primary" href="mailto:{EMAIL}">Email Me</a><a class="btn" href="{LINKEDIN}" target="_blank" rel="noopener">LinkedIn <span aria-hidden="true">↗</span><span class="sr-only">(opens in a new tab)</span></a></div>
     </div>
